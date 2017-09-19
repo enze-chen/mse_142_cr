@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}		% Required header
+\ProvidesPackage{mystyle}		% Name of this .sty file
+
+% Created: Enze Chen, 2017
+%
+% Below are the packages, macros, and custom environments used in the
+% coursereader document. All changes to style should be made here, as
+% the main file just imports this single style page.
+
+\usepackage{amsfonts, amsmath, amssymb}	% Various tools from ams suite
+\usepackage{array, booktabs}	% Better table functionality
+\usepackage[left=2cm, right=2cm, top=2.6cm, bottom=2.4cm]{geometry}
+\usepackage{fancyhdr}			% Creative headers and page formatting
+\usepackage{tocloft}			% Special spacings for ToC
+%\usepackage{setspace}			% Custom spacing of text
+\usepackage{graphicx}			% Main graphics package for figures
+\usepackage{tikz, subfig}		% For various graphics enhancements
+\usetikzlibrary{shapes.geometric, calc, patterns, arrows.meta, decorations.pathmorphing}		% tikz packages
+%\usepackage{color}				% Colors
+\usepackage[most]{tcolorbox}	% Creative textboxes
+\usepackage{enumerate}			% More creative lists
+\usepackage{mathtools}			% Various math functions
+\usepackage{microtype}			% Improved spacing/kerning
+\usepackage{physics}			% \braket{}{} environment
+\usepackage{siunitx}			% \SI{}{} environment to typset units
+%\usepackage{xifthen}			% Fancier \newcommand options
+\usepackage{cancel}				% \cancel{} environment
+\usepackage[margin=1.5cm]{caption} % Changes caption width
+
+\usepackage{hyperref} 			% If used, this should be the last package
+\hypersetup{					% Change the colors of links
+	colorlinks = true,
+	linkcolor = purple,
+	filecolor = magenta,      
+	urlcolor = blue,
+}
+
+% Define macros here
+%\newcommand{\ad}[1][]{\ifthenelse{\isempty{#1}}{a^{\dagger}}{a^{\dagger 2}}}
+\newcommand{\ad}{a^{\dagger}}
+\newcommand{\Sch}{Schr{\"o}dinger}
+\newcommand{\ddx}{\dfrac{\dd}{\dd{x}}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\pagestyle{fancy}				% Sets fancy page style (fancyhdr)
+\cfoot{\thepage}				% Page numbers at center
+\graphicspath{{../fig/}}		% Directory for all figures
+\setlength{\parskip}{10pt}		% Inserts 10pt whitespace after paragraphs
+\setlength{\parindent}{0pt}		% No indentation for new paragraphs
+\allowdisplaybreaks[1]
+
+%%% Chapter title formatting courtesty of ShareLatex
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+\def\@makechapterhead#1{
+%	\vspace*{1\p@}%
+	{\parindent \z@ \centering \reset@font
+		\thickhrulefill\quad 
+		\scshape\bfseries\textit{\Large \@chapapp{}  \thechapter}  
+		\quad \thickhrulefill
+		\par\nobreak
+		\vspace*{10\p@}%
+		\interlinepenalty\@M
+		\hrule
+		\vspace*{10\p@}%
+		\Huge \bfseries #1 \par\nobreak
+		\par
+		\vspace*{10\p@}%
+		\hrule
+		\vskip 30\p@
+}}
+
+%%% tcolorbox formatting
+\tcbset{
+	center,
+	center title,
+	center upper,
+	fonttitle=\bfseries\color{black},
+	toptitle=1mm,
+	bottomtitle=1mm,
+	colframe=black,
+	colbacktitle=gray!20,
+	colback=white,
+	width=0.85\linewidth,
+}
+
+\endinput

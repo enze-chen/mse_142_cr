@@ -1,0 +1,58 @@
+\documentclass[12pt, english]{book}
+\usepackage{mystyle}
+
+% Created: Enze Chen, 2017
+%
+% This is the main .tex file that compiles all of the separate chapters together. It uses the custom mystyle.sty style package and only has title page information below. Changes to the chapters and appendices should be made in the respective file; changes here should be for organizational purposes only.
+
+% Title and author information
+\title{{\LARGE \textbf{MATSCI 142}} \\ Quantum Mechanics of Nanoscale Materials}
+\author{Aaron M. Lindenberg \\ Stanford University}
+\date{Spring 2018 \\ Version $\hbar\omega/2$}
+
+\begin{document}
+	
+\frontmatter % Roman numeral page numbering
+\let\cleardoublepage\clearpage % eliminates extra blank pages
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{chapter__pref}
+
+\mainmatter 		% Arabic page numbering for start of content
+
+\input{chapter_1}	% Introduction to quantum mechanics
+
+\input{chapter_2}	% The Schrodinger equation
+
+\input{chapter_3}	% Particle in a box
+
+\input{chapter_4}	% Quantum tunneling
+
+\input{chapter_5}	% Periodic potentials
+
+\input{chapter_6}	% Quantum harmonic oscillators
+
+%\input{old--chapter_7}	% Quantum mechanics formalism
+
+\input{chapter_7}	% Quantum field theory
+
+\input{chapter_8}	% Perturbation theory
+
+\input{chapter_9}	% What's Next?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\input{chapter_a_reference}
+
+\input{chapter_b_review}
+
+\input{chapter_c_derivation}
+
+\input{chapter_d_feedback}
+
+\end{document}
