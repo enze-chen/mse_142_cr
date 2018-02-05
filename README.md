@@ -11,7 +11,7 @@ The organization of the repo is as follows:
 * The [`MSE_142_CR_main.tex`](./tex/MSE_142_CR_main.tex) file links each of the individual chapters together and loads the necessary packages. The actual content for each chapter is contained in its own `.tex` file. This refactoring maintains readability and localized changes.
 * To compile the entire coursereader, build the **main** file. It will automatically join all the chapters together and link all references appropriately.
     * If you want to test an individual chapter, you can uncomment the lines at the top of the chapter and the last line, and compile it separately.
-    * [`142crstyle.sty`](./tex/mystyle.sty) has all of the packages and macros that would normally be in the preamble. Add any new packages and macros to this file, which is called by main.
+    * [`142crstyle.sty`](./tex/142crstyle.sty) has all of the packages and macros that would normally be in the preamble. Add any new packages and macros to this file, which is called by main.
 
 ## Figures
 The LaTeX graphics path has been defined to search only within the [fig](./fig/) folder, so you only need to call the name of the figure in the text. The current set of figures that aren't screenshots of online sources are made natively using [MATLAB](https://www.mathworks.com/products/matlab.html) (accessible through Stanford [FarmShare](https://web.stanford.edu/group/farmshare/cgi-bin/wiki/index.php/MATLAB)) and [TikZ/PGF](http://www.texample.net/tikz/) (LaTeX package). These programs create lightweight, high-resolution *vector* graphics (when saved as `.pdf` file) that can rescale to any size without loss of resolution. There is no requirement to continue using these programs, but try to make future figures vectorized if possible.

@@ -1,0 +1,153 @@
+% Created: Enze Chen, June 2017
+% Last edited: Enze Chen, February 2018
+%
+% Appendix C of the MSE 142 coursereader. This chapter steps through some of the trickier derivations that were left out of the main body for clarity. Also a place for Enze to jot notes down.
+
+% Uncomment the following three lines and last line to individually compile this chapter
+%\documentclass[12pt, english]{book}
+%\usepackage{142crstyle}
+%\begin{document}
+
+\chapter{Derivations} \label{ch:deriv}
+\section{Tunneling probability}  \label{sec:tunnel-deriv}
+In Section~\ref{sec:tunnel-barrier}, we derived the tunneling probability for the finite potential barrier, but left out the more tedious steps. Here, we will derive the tunneling probability in its entirety for the case $E < V_0$. \par 
+
+To start, recall that we have the following three wave function solutions:
+\begin{align}
+\Psi_{\text{I}} &= Ae^{ikx} + Be^{-ikx} \label{der:twf-1} \\
+\Psi_{\text{II}} &= Ce^{k'x} + De^{-k'x} \label{der:twf-2} \\
+\Psi_{\text{III}} &= Fe^{ikx} \label{der:twf-3}
+\end{align}
+
+By the continuity of the wave function and its first derivative at $x=0$, we can use Equation~\ref{der:twf-1} and~\ref{der:twf-2} to obtain
+\begin{align}
+	A + B &= C + D \label{der:tb-1} \\
+	A - B &= (C - D)\frac{k'}{ik} \label{der:tb-2}
+\end{align}
+
+Similarly, we can use Equation~\ref{der:twf-2} and~\ref{der:twf-3} to obtain two more equations thanks to the continuity condition at $x=L$.
+\begin{align}
+	Ce^{k'L} + De^{k'L} &= Fe^{ikL} \label{der:tb-3} \\
+	Ce^{k'L} - De^{k'L} &= Fe^{ikL}\frac{ik}{k'} \label{der:tb-4}
+\end{align}
+
+Now we add Equation~\ref{der:tb-1} and~\ref{der:tb-2} to eliminate $B$ as follows.
+\begin{align}
+	2A &= C \left(1 + \frac{k'}{ik}\right) + D\left(1 - \frac{k'}{ik}\right) \nonumber \\ 
+	&= C \left(1 - \frac{ik'}{k}\right) + D\left(1 + \frac{ik'}{k}\right) \label{der:ta}
+\end{align}
+
+Next, we add and subtract Equation~\ref{der:tb-3} and~\ref{der:tb-4} to isolate $C$ and $D$:
+\begin{align}
+	\text{Add:}\quad 2Ce^{k'L} &= F \left(1 + \frac{ik}{k'}\right)e^{ikL} \nonumber \\
+	C &= \frac{F}{2}\left(1 + \frac{ik}{k'}\right)e^{ikL}e^{-k'L} \label{der:tc} \\
+	\text{Subtract:}\quad 2De^{-k'L} &= F \left(1 - \frac{ik}{k'}\right)e^{ikL} \nonumber \\
+	D &= \frac{F}{2} \left(1 - \frac{ik}{k'}\right)e^{ikL}e^{k'L} \label{der:td}
+\end{align}
+
+This allows us to plug Equation~\ref{der:tc} and~\ref{der:td} into Equation~\ref{der:ta} to obtain
+\begin{align*}
+	2A &= C \left(1 - \frac{ik'}{k}\right) + D  \\
+	2A &= \frac{F}{2}\left(1 - \frac{ik'}{k}\right)\left(1 + \frac{ik}{k'}\right)e^{ikL}e^{-k'L} + \frac{F}{2} \left(1 + \frac{ik'}{k}\right)\left(1 - \frac{ik}{k'}\right)e^{ikL}e^{k'L} \\
+	4Akk' &= F(k-ik')(k'+ik)e^{ikL}e^{-k'L} + F(k+ik')(k'-ik)e^{ikL}e^{k'L} \\
+	4Aikk' &= F(ik-i^2k')(k'+ik)e^{ikL}e^{-k'L} + F(ik+i^2k')(k'-ik)e^{ikL}e^{k'L} \\
+	4Aikk' &= F(ik+k')(k'+ik)e^{ikL}e^{-k'L} + F(ik-k')(k'-ik)e^{ikL}e^{k'L} \\
+	4Aikk' &= F(ik+k')^2e^{ikL}e^{-k'L} - F(ik-k')^2e^{ikL}e^{k'L} \\
+	4Aikk'e^{-ikL} &= F \left[(ik+k')^2e^{-k'L} - (ik-k')^2e^{k'L}\right] \numberthis \label{der:taf}
+\end{align*}
+
+which is how we arrived at Equation~\ref{eq:tunnel-fa} in Section~\ref{sec:tunnel-barrier}. To solve for the tunneling probability $T = \abs{\frac{F}{A}}^2$, we'll actually solve for $\abs{\frac{A}{F}}^2$ first using Equation~\ref{der:taf} and then invert the result.
+\begin{align*}
+	4Aikk'e^{-ikL} &= F \left[(ik+k')^2e^{-k'L} - (ik-k')^2e^{k'L}\right] \\
+	\frac{Ae^{-ikL}}{F} &= \frac{(ik+k')^2e^{-k'L} - (ik-k')^2e^{k'L}}{4ikk'} \\
+	\frac{Ae^{-ikL}}{F} &= \frac{(k^{\prime 2}-k^2 + 2ikk')e^{-k'L} - (k^{\prime 2} - k^2 - 2ikk')e^{k'L}}{4ikk'} \\
+	\frac{Ae^{-ikL}}{F} &= \frac{2ikk'e^{-k'L} - (-2ikk'e^{k'L}) + (k^{\prime 2}-k^2)e^{-k'L} - (k^{\prime 2} - k^2)e^{k'L}}{4ikk'} \\
+	\frac{Ae^{-ikL}}{F} &= \frac{e^{-k'L} + e^{k'L}}{2} + \frac{k^{\prime 2}-k^2}{2kk'}\frac{e^{k'L} - e^{-k'L}}{2}i \\
+	\frac{Ae^{-ikL}}{F} &= \cosh(k'L) + \left(\frac{k^{\prime 2}-k^2}{2kk'}\right)i\sinh(k'L) \\
+	\abs{\frac{Ae^{-ikL}}{F}}^2 &= \abs{\cosh(k'L) + \left(\frac{k^{\prime 2}-k^2}{2kk'}\right)i\sinh(k'L)}^2 \\
+	\abs{\frac{A}{F}}^2 &= \cosh^2(k'L) + \left(\frac{k^{\prime 2}-k^2}{2kk'}\right)^2\sinh^2(k'L) \\
+	\abs{\frac{A}{F}}^2 &= 1 + \sinh^2(k'L) + \left(\frac{k^{\prime 2}-k^2}{2kk'}\right)^2\sinh^2(k'L) \\
+	\abs{\frac{A}{F}}^2 &= 1 + \left[ \frac{(2kk')^2}{(2kk')^2} + \left(\frac{k^{\prime 2}-k^2}{2kk'}\right)^2\right]\sinh^2(k'L) \\
+	\abs{\frac{A}{F}}^2 &= 1 + \left(\frac{k^{\prime 2}+k^2}{2kk'}\right)^2\sinh^2(k'L) 
+\end{align*}
+
+Inverting this gives us our final result,
+\begin{equation}
+	T = \abs{\frac{F}{A}}^2  = \frac{1}{1 + \left(\frac{k^2+k^{\prime 2}}{2kk'}\right)^2 \sinh^2(k'L)}
+\end{equation}
+which matches what we claimed in Equation~\ref{eq:tunnel-prob-full}.
+
+\section{Casimir Force} \label{sec:casimir-deriv}
+We already showed in Chapter~\ref{ch:qft} that the energy on the outside of two conducting plates is given by
+\begin{equation}
+	E_{\text{out}} = \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \frac{1}{s^2}  \label{eq:casimir-out-app}
+\end{equation}
+
+Here we will walk through the derivation for $E_{\text{in}}$ as the quantum confinement makes the math a little more tricky. Just as we did in the derivation for $E_{\text{out}}$, we will also apply regularization to the expression we obtained for $E_{\text{in}}$. Starting from the summation, we proceed as follows:
+
+\begin{align*}
+E_{\text{in}} &= \frac{\hbar \pi c}{2d} \sum_{n=1}^{\infty} n \\
+&= \frac{\hbar \pi c}{2d} \sum_{n=0}^{\infty} n \tag{adding 0 doesn't matter} \\
+&= \frac{\hbar \pi c}{2d} \sum_{n=0}^{\infty} \lim\limits_{s \rightarrow 0} ne^{-sn} \tag{regularization} \\
+&= \frac{\hbar \pi c}{2d} \sum_{n=0}^{\infty} \dv{s} \int \lim\limits_{s \rightarrow 0} ne^{-sn} \dd{s} \\
+&= \frac{\hbar \pi c}{2d} \left( - \lim\limits_{s \rightarrow 0} \dv{s} \sum_{n=0}^{\infty} e^{-sn} \right)
+\end{align*}
+
+In the last line we evaluate the integral with respect to $s$ first and then swap the order of the derivative and summation since they are both linear operators. We then expand the summation as follows:
+
+\begin{align*} 
+E_{\text{in}} &= \frac{\hbar \pi c}{2d} \left( - \lim\limits_{s \rightarrow 0} \dv{s} \sum_{n=0}^{\infty} e^{-sn} \right) \\
+&= \frac{\hbar \pi c}{2d} \left( - \lim\limits_{s \rightarrow 0} \dv{s} \left[ 1 + e^{-s} + e^{-2s} + \cdots \right] \right) \\
+&= \frac{\hbar \pi c}{2d} \left( - \lim\limits_{s \rightarrow 0} \dv{s} \frac{1}{1-e^{-s}} \right)
+\end{align*}
+
+In the last line above we used the formula for the sum of an infinite geometric series: 
+\begin{equation*}
+	a + ar + ar^2 + ar^3 + \cdots = \frac{a}{1-r}\quad \abs{r} < 1
+\end{equation*}
+
+Now we can evaluate the derivative to obtain
+\begin{align*}
+E_{\text{in}} &= \frac{\hbar \pi c}{2d} \left( - \lim\limits_{s \rightarrow 0} \dv{s} \frac{1}{1-e^{-s}} \right) \\
+&= \frac{\hbar \pi c}{2d} \left( \lim\limits_{s \rightarrow 0} \frac{1}{(1-e^{-s})^2} \cdot \dv{s} (1-e^{-s}) \right) \\
+&= \frac{\hbar \pi c}{2d} \left( \lim\limits_{s \rightarrow 0} \frac{e^{-s}}{(1-e^{-s})^2} \right) \\
+&= \frac{\hbar \pi c}{2d} \left( \lim\limits_{s \rightarrow 0} \frac{e^{-s}}{(1-e^{-s})^2} \cdot \frac{e^{2s}}{e^{2s}} \right) \\
+&= \frac{\hbar \pi c}{2d} \left( \lim\limits_{s \rightarrow 0} \frac{e^{s}}{[e^s(1-e^{-s})]^2} \right) \\
+&= \frac{\hbar \pi c}{2d} \left( \lim\limits_{s \rightarrow 0} \frac{e^{s}}{(e^s-1)^2} \right)
+\end{align*}
+
+Now if we rewrite the last line using the Taylor series expansion around $s=0$, we get
+\begin{align*}
+E_{\text{in}} &= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1 + s + s^2/2 + s^3/6 + \cdots}{(s + s^2/2 + s^3/6 + \cdots)^2} \right) \\
+&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1 + s + s^2/2 + s^3/6 + \cdots}{s^2 (1 + s/2 + s^2/6 + \cdots)^2} \right) \\
+&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1 + s + s^2/2 + s^3/6 + \cdots}{s^2 (1 + s + 7s^2/12 + 3s^3/12 + \cdots )} \right) 
+\end{align*}
+
+Here we employ a clever factorization of the bottom sum as follows:
+\begin{align*}
+	1 + s + \frac{7s^2}{12} + \frac{3s^3}{12} + \cdots &= \left( 1 + s + \frac{6s^2}{12} + \frac{2s^3}{12} + \cdots \right) + \left( \frac{s^2}{12} + \frac{s^3}{12} + \cdots \right) + \cdots \\
+	&= \left( 1 + s + \frac{s^2}{2} + \frac{s^3}{6} + \cdots \right) + \frac{1}{12}s^2 \bigg( 1 + s + \cdots \bigg) + \cdots \\
+\end{align*}
+
+Now the large sum has been divided into separate chunks that each contain a multiple of the numerator! I used ellipses here for brevity, but if you fully expand the Taylor series you will find that this pattern continues ad infinitum. This means we can take our previous expression for $E_{\text{in}}$ and divide through by the numerator to obtain:
+\begin{align*}
+	E_{\text{in}} &= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{\overbrace{1 + s + s^2/2 + s^3/6 + \cdots}^{\phi}}{s^2 (1 + s + 7s^2/12 + 3s^3/12 + \cdots )} \right) \\
+	&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{\phi}{s^2 (\phi + \phi \cdot s^2/12 - \phi \cdot s^4/240 + \cdots)} \right) \\
+	&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1}{s^2 \left(1 + s^2/12 - s^4/240 + \cdots \right)} \right) \\
+	&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \bigg( s^{-2} \left(1 + \frac{s^2}{12} + \mathcal{O}(s^4) \right)^{-1}  \bigg)
+\end{align*}
+
+Finally, we use the approximation
+\begin{equation*}
+	(1 \pm k)^p \approx 1 \pm pk + \frac{p(p-1)}{2} k^2 + \cdots \quad \text{for small } k
+\end{equation*}
+
+in order to obtain the final result
+\begin{align*}
+E_{\text{in}} &= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1}{s^2} \left(1 - \frac{s^2}{12} + \mathcal{O}(s^4) \right) \right) \\
+&= \frac{\hbar \pi c}{2d} \lim\limits_{s \rightarrow 0} \left( \frac{1}{s^2} - \frac{1}{12} + \mathcal{O}(s^2) \right) \numberthis 
+\end{align*}
+%\tag{$(1 \pm u)^p \approx 1 \pm pu$ for small $u$} \right)
+which matches our expression in Equation~\ref{eq:casimir-in2}.
+
+%\end{document}

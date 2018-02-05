@@ -1,0 +1,63 @@
+% Created: Enze Chen, May 2017
+% Last edited: Enze Chen, May 2017
+%
+% Appendix A of the MSE 142 coursereader. This chapter serves as a reference sheet for physical constants, SI prefixes, the Schrodinger equation, and other useful formulas. 
+
+% Uncomment the following three lines and last line to individually compile this chapter
+%\documentclass[12pt, english]{book}
+%\usepackage{142crstyle}
+%\begin{document}
+
+\chapter{Reference} \label{ch:ref}
+%{ \doublespacing
+Here are some fundamental constants and equations that you might need to refer to. \par 
+\section{Fundamental constants}
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{lll}
+	\textbf{Name} & \textbf{Symbol} & \textbf{Value} \\ \toprule
+	Planck's constant & $h$ & \SI{6.626070e-34}{\joule \second} \\ 
+	Reduced Planck's constant & $\hbar = h/2\pi$ & \SI{1.054572e-34}{\joule\second} \\
+	Speed of light & $c$ & \SI{2.997925e8}{\meter/\second} \\
+	Mass of an electron & $m_e$ & \SI{9.109384e-31}{\kilogram} \\
+	Mass of a proton & $m_p$ & \SI{1.672622e-27}{\kilogram} \\
+	Charge of an electron & $e$ & \SI{1.602177e-19}{\coulomb} \\
+	Boltzmann's constant & $k_B$ & \SI{1.380649e-23}{\joule/\kelvin} \\
+	Permittivity of free space & $\varepsilon_0$ & \SI{8.854188e-12}{\farad/\meter}
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering 
+	\begin{tabular}{lccccccccc}
+	\textbf{SI Prefix}: & tera & giga & mega & kilo & milli & micro & nano & pico & femto \\ \midrule
+	\textbf{Value}: & $10^{12}$ & $10^{9}$ & $10^{6}$ & $10^{3}$ & $10^{-3}$ & $10^{-6}$ & $10^{-9}$ & $10^{-12}$ & $10^{-15}$
+	\end{tabular}
+\end{table}
+
+
+\section{The \Sch\ equation}
+In its most general form, the \textbf{time-dependent} \Sch\ equation is given by 
+\begin{tcolorbox}[title=Time-dependent \Sch\ equation] \vspace{-2ex}
+\begin{equation*}
+	i\hbar \pdv{t} \Psi(\textbf{r}, t) = \hat{H}\Psi(\textbf{r}, t)
+\end{equation*}
+\end{tcolorbox}
+
+where $i$ is the imaginary number $i=\sqrt{-1}$, $\hbar$ is the reduced Planck's constant, $\pdv{t}$ is the partial derivative with respect to time, $\Psi$ is the wavefunction, $\mathbf{r}$ is the position vector, $t$ is time, and $\hat{H}$ is the Hamiltonian operator. Often times, we make the simplification to obtain the \textbf{time-independent} \Sch\ equation for stationary states. It is given generally by
+\begin{equation*}
+\hat{H}\Psi = E\Psi
+\end{equation*}
+
+where $E$ is a proportionality constant equal to the energy of state $\Psi$. For a non-relativistic particle, the time-independent \Sch\ equation in three-dimensional space is given by 
+\begin{equation*}
+\left[ -\dfrac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r}) \right]\Psi(\mathbf{r}) = E\Psi(\mathbf{r})
+\end{equation*}
+
+where $\nabla^2$ is the Laplacian operator and $V$ is the potential. In just one dimension, say along the $x$ direction, this expression simplifies down to the canonical
+\begin{tcolorbox}[title=Time-independent \Sch\ equation] \vspace{-2ex}
+\[ -\dfrac{\hbar^2}{2m} \dv[2]{\psi(x)}{x} + V(x)\psi(x) = E\psi(x) \]
+\end{tcolorbox}
+
+%}
+%\end{document}
