@@ -1,7 +1,7 @@
 # MATSCI 142 Coursereader
 
 ## About
-This repo contains the MATSCI 142 coursereader used in Aaron Lindenberg's undergraduate quantum mechanics course at Stanford University. It is shared with the intent that future contributors can update the coursereader as the class continues to evolve.
+This repo contains the MATSCI 142 coursereader used in Aaron Lindenberg's undergraduate quantum mechanics course at Stanford University. It is shared with the intent that future contributors can update the coursereader as the class continues to evolve. The PDF can be found [here](tex/MSE_142_CR_main.pdf).
 
 ## Usage
 After cloning this repo, you will need to have [LaTeX]("http://www.latex-project.org/") installed on your system in order to work with it. Feel free to use your favorite TeX distribution and editor, but for people who are new to the typesetting language, one recommendation is to first install either [MikTex](https://miktex.org/) (Windows) or [MacTex](http://tug.org/mactex/) (Mac OS), followed by the [TexStudio](http://texstudio.sourceforge.net/) editor which has many handy features.
