@@ -1,10 +1,15 @@
 # MATSCI 142 Coursereader
 
 ## About
-This repo contains the MATSCI 142 coursereader used in Aaron Lindenberg's undergraduate quantum mechanics course at Stanford University. It is shared with the intent that future contributors can update the coursereader as the class continues to evolve. The PDF can be found [here](tex/MSE_142_CR_main.pdf).
+This repo contains the MATSCI 142 coursereader used in Aaron Lindenberg's undergraduate quantum mechanics course at Stanford University. It is shared with the intent that future contributors can update the coursereader as the class continues to evolve. 
 
-## Usage
-After cloning this repo, you will need to have [LaTeX]("http://www.latex-project.org/") installed on your system in order to work with it. Feel free to use your favorite TeX distribution and editor, but for people who are new to the typesetting language, one recommendation is to first install either [MikTex](https://miktex.org/) (Windows) or [MacTex](http://tug.org/mactex/) (Mac OS), followed by the [TexStudio](http://texstudio.sourceforge.net/) editor which has many handy features.
+## Reading
+If you would just like to read the coursereader, the PDF can be downloaded from [here](tex/MSE_142_CR_main.pdf).
+
+## Contributing
+There are many ways to contribute. From readers, I welcome any and all feedback through [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfBslPX-CTW2bvkPTJsWzHlVSHXC_u8ixhXTY8gSjVxzC-yyA/viewform). You can also follow the GitHub workflow and [file an Issue](https://github.com/enze-chen/mse_142_cr/issues) at the top.
+
+If you would like to work on updating the coursereader, even better! After cloning this repo, you will need to have [LaTeX]("http://www.latex-project.org/") installed on your system in order to work with it. Feel free to use your favorite TeX distribution and editor, but for people who are new to the typesetting language, one recommendation is to first install either [MikTex](https://miktex.org/) (Windows) or [MacTex](http://tug.org/mactex/) (Mac OS), followed by the [TexStudio](http://texstudio.sourceforge.net/) editor which has many handy features.
 
 The organization of the repo is as follows:
 * All the `.tex` files for book content are in the [tex](./tex/) folder, and all the referenced figures (`PDF` and `PNG` files only) are in the [fig](./fig/) folder.
