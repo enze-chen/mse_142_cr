@@ -1,0 +1,136 @@
+% Created: Enze Chen, July 2017
+% Last edited: Enze Chen, December 2017
+%
+% Chapter 8 of the MSE 142 coursereader. This chapter discusses time-dependent perturbation theory. The various approximations for the probability amplitudes are discussed, and particular focus is drawn to sinusoidal perturbations. These model electric fields, which can be applied to stimulated emission in lasers.
+
+% Uncomment the following three lines and last line to individually compile this chapter
+%\documentclass[12pt, english]{book}
+%\usepackage{142crstyle}
+%\begin{document}
+
+\chapter[Topology]{Topology and Indistinguishability} \label{ch:topo}
+%{ \doublespacing 
+As an advanced topic, we'll discuss the distinguishability (or lack thereof) of quantum particles and their topology.
+While they sound abstract, these concepts are important for...
+We'll just sketch the main ideas here, and encourage you to consult other resources for a more thorough treatment.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Before you begin}
+
+This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
+We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
+
+\begin{itemize}
+	\item foo 
+	\item bar 
+	\item Prerequisite self-check quiz 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{General formalism}
+To start off, imagine we have a wave function for a two-particle system, $\Psi(x_1, x_2)$.
+If the two particles are indistinguishable, then their probability densities, given by $\abs{\Psi}^2$, should be \textbf{invariant under exchange}.
+That is, if the two particles swapped places, we wouldn't be able to tell the difference.
+Mathematically, we would write
+
+\begin{equation}
+	\abs{\Psi(x_1, x_2)}^2 = \abs{\Psi(x_2, x_1)}^2  \label{eq:swapped}
+\end{equation}
+
+The consequence of Equation~\ref{eq:swapped} is that the two wave functions are only off by a multiplicative constant,
+
+\begin{equation}
+	\Psi(x_1, x_2) = A \Psi(x_2, x_1)
+	\label{eq:swapped_A}
+\end{equation}
+
+where $A = e^{i \alpha}$ for some phase $\alpha$.
+Now consider further a situation of \emph{double exchange}, where the two particles return to their initial positions. 
+Now using Equation~\ref{eq:swapped_A}, we get
+\begin{align*}
+	\Psi(x_1, x_2) &= A \Psi(x_2, x_1) \\
+	\Psi(x_1, x_2) &= A^2  \Psi(x_1, x_2) \\
+	A^2 &= 1 \\
+	A = e^{i \alpha} &= \pm 1   \numberthis \label{eq:swapped_pm}
+\end{align*}
+
+Equation~\ref{eq:swapped_pm} gives us two classes of particles:
+
+\begin{tcolorbox}[title = Fermions]
+	$e^{i \alpha} = -1$ describes \textbf{fermions}, which are \emph{antisymmetric} under exchange, $\Psi(x_1, x_2) = - \Psi(x_2, x_1)$.
+	Electrons are common examples of fermions.
+\end{tcolorbox}
+
+\begin{tcolorbox}[title = Bosons]
+	$e^{i \alpha} = 1$ describes \textbf{bosons}, which are \emph{symmetric} under exchange, $\Psi(x_1, x_2) = \Psi(x_2, x_1)$.
+	Photons and phonons are common examples of bosons.
+\end{tcolorbox}
+
+Fermions have a particularly interesting probability with respect to their indistinguishability.
+Imagine the two particles are in the same single-particle state, such that $x_1 = x_2$.
+Then we have 
+
+\begin{equation}
+	\Psi(x_1, x_1) = -\Psi(x_1, x_1) \implies \Psi(x_1, x_1) = 0   \label{eq:pauli}
+\end{equation}
+
+If the wave function is 0 everywhere, then the probability of this configuration is also 0.
+Equation~\ref{eq:pauli} leads to the celebrated Pauli exclusion principle.
+
+\begin{tcolorbox}[title = Pauli exclusion principle]
+	It is \textbf{impossible} for two fermions to occupy the same quantum state.
+\end{tcolorbox}
+
+
+\begin{figure}
+	\centering 
+	\includegraphics[width=0.5\linewidth]{example-image-a}
+	\caption{foo bar}
+	\label{fig:exchange}
+\end{figure}
+
+
+Let us now provide a topological picture of exchange, which we'll describe in more detail in the following section.
+Consider a system of two indistinguishable electrons arranged as in \autoref{fig:exchange}.
+In the figure are also two paths that represent processes that operate on the position of the left particle.
+Along Path 1, there is no exchange, as in one sense the particle has not changed its relative position, but more importantly, this path can be contracted (deformed) into the single particle (a null operation, in some sense).
+
+
+Path 2, on the other hand, corresponds to double exchange, as halfway through, the particles have switched places, and by the end they have switched back.
+Moreover, in 3D, it is possible to physically deform path 2 to match path 1 (lift it out of the plane of the paper), so double exchange is equivalent to no exchange.
+They have the same topological properties (such paths are called \emph{homotopic}), which admits $e^{2 i \alpha} = 1$, as seen earlier in \autoref{eq:swapped_pm}.
+
+
+But in 2D, these paths cannot be deformed continuously to match each other, and the paths are knotted.
+This means in 2D, double exchange is not equivalent to no exchange and that $e^{2 i \alpha}$ does not necessarily equal 1.
+This describes a class of particles called \textbf{anyons}, which are the basis for topological quantum computing.\footnote{See the article by X and Y, \href{https://arxiv.org/abs/1705.04103}{Sci. Post.} for a lengthier introduction to this topic.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Topology}
+
+Topology is the study of the \emph{global} properties of geometric objects that don't depend on local features, or are \emph{preserved} under small local deformations.
+A canonical example is the topological equivalency of a donut and a mug.
+
+\href{https://www.youtube.com/watch?v=EgsUDby0X1M&pp=ygUcZGlyYWMgYmVsdCB0cmljayBwbGF0ZSB0cmljaw\%3D\%3D}{this video}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Application: XXX}
+
+TODO
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+To recap, in this chapter we analyzed...
+
+%} % for doublespacing
+%\end{document}
