@@ -3,7 +3,22 @@
 *.bbl
 *.log
 *.out
+*.synctex
+*.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
 *.toc
-tex/chapter__pref.tex
+
+## Individual chapters
+/tex/chapter_0_preface.pdf
+/tex/chapter_1_intro.pdf
+/tex/chapter_2_schrodinger.pdf
+/tex/chapter_3_particle.pdf
+/tex/chapter_4_tunneling.pdf
+/tex/chapter_5_periodic.pdf
+/tex/chapter_6_harmonic.pdf
+/tex/chapter_7_qft.pdf
+/tex/chapter_8_perturb.pdf
+/tex/chapter_9_next.pdf
+/tex/chapter_10_topology.pdf
+/tex/chapter_11_computing.pdf

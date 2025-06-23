@@ -2,7 +2,6 @@
 \ProvidesPackage{142crstyle}		% Name of this .sty file
 
 % Created: Enze Chen, 2017
-%
 % Below are the packages, macros, and custom environments used in the
 % coursereader document. All changes to style should be made here, as
 % the main file just imports this single style page.
@@ -12,40 +11,38 @@
 \usepackage[left=2cm, right=2cm, top=2.6cm, bottom=2.4cm]{geometry}
 \usepackage{fancyhdr}			% Creative headers and page formatting
 \usepackage{tocloft}			% Special spacings for ToC
-%\usepackage{setspace}			% Custom spacing of text
 \usepackage{graphicx}			% Main graphics package for figures
-\usepackage{tikz, subfig}		% For various graphics enhancements
-\usetikzlibrary{shapes.geometric, calc, patterns, arrows.meta, decorations.pathmorphing}		% tikz packages
-%\usepackage{color}				% Colors
+\usepackage{subfig}				% For various graphics enhancements
+\usepackage[svgnames]{xcolor}	% Extended colors
 \usepackage[most]{tcolorbox}	% Creative textboxes
-\usepackage{enumerate}			% More creative lists
 \usepackage{mathtools}			% Various math functions
 \usepackage{microtype}			% Improved spacing/kerning
 \usepackage{physics}			% \braket{}{} environment
 \usepackage{siunitx}			% \SI{}{} environment to typset units
-%\usepackage{xifthen}			% Fancier \newcommand options
 \usepackage{cancel}				% \cancel{} environment
 \usepackage[margin=1.5cm]{caption} % Changes caption width
+\usepackage[hang,flushmargin]{footmisc} % Change indentation of footnotes
 
 \usepackage{hyperref} 			% If used, this should be the last package
 \hypersetup{					% Change the colors of links
 	colorlinks = true,
-	linkcolor = purple,
+	linkcolor = MidnightBlue,
 	filecolor = magenta,      
-	urlcolor = blue,
+	urlcolor = RoyalBlue,
 }
 
 % Define macros here
-%\newcommand{\ad}[1][]{\ifthenelse{\isempty{#1}}{a^{\dagger}}{a^{\dagger 2}}}
 \newcommand{\ad}{a^{\dagger}}
 \newcommand{\Sch}{Schr{\"o}dinger}
 \newcommand{\ddx}{\dfrac{\dd}{\dd{x}}}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
 \pagestyle{fancy}				% Sets fancy page style (fancyhdr)
 \cfoot{\thepage}				% Page numbers at center
 \graphicspath{{../fig/}}		% Directory for all figures
 \setlength{\parskip}{10pt}		% Inserts 10pt whitespace after paragraphs
 \setlength{\parindent}{0pt}		% No indentation for new paragraphs
+\setlength{\footnotemargin}{3mm} % add space after footnote number
 \allowdisplaybreaks[1]
 
 %%% Chapter title formatting courtesty of ShareLatex

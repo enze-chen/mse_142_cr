@@ -17,8 +17,8 @@ If you would just like to read the coursereader, the PDF can be downloaded from 
 ## Contributing
 
 There are many ways to contribute!
-From readers, I welcome any and all feedback through [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfBslPX-CTW2bvkPTJsWzHlVSHXC_u8ixhXTY8gSjVxzC-yyA/viewform). 
-You can also follow the GitHub workflow and [file an Issue](https://github.com/enze-chen/mse_142_cr/issues) at the top.
+From readers, we welcome any and all feedback. 
+If you're reading this on GitHub, feel free to [file an Issue](https://github.com/enze-chen/mse_142_cr/issues) or email Enze directly.
 
 If you would like to work on updating the coursereader, even better! 
 After cloning this repo, you will need to have [LaTeX]("http://www.latex-project.org/") installed on your system in order to work with it. 

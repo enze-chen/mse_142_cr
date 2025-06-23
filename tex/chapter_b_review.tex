@@ -53,8 +53,9 @@ One of the most amazing results in complex analysis is \textbf{Euler's formula},
 	$e^{ix} = \cos(x) + i\sin(x), \quad \forall x \in \mathbb{R}$
 \end{tcolorbox}
 
-When this formula is evaluated at $x=\pi$, we arrive at the identity $e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1$. Euler's formula will be extremely useful in our analysis of waves, because the sinusoidal behavior of cosine and sine are all encompassed neatly in the complex exponential term. I'll give two final comments about Euler's formula here:
-\begin{enumerate}[1.]
+When this formula is evaluated at $x=\pi$, we arrive at the identity $e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1$. Euler's formula will be extremely useful in our analysis of waves, because the sinusoidal behavior of cosine and sine are all encompassed neatly in the complex exponential term. 
+We'll give two final comments about Euler's formula here:
+\begin{itemize}
 	\item Though it's written in a slightly different form, $e^{ix}$ is still a complex number, with $a = \cos(x)$ and $b = \sin(x)$. Therefore, it has a complex conjugate equal to $e^{-ix}=\cos(x) -i\sin(x)$. Let's apply what we did above and multiply $e^{ix}$ and $e^{-ix}$.
 	\begin{align*}
 	e^{ix} \cdot e^{-ix} &= (\cos(x) + i\sin(x))(\cos(x)-i\sin(x)) \\
@@ -74,25 +75,27 @@ When this formula is evaluated at $x=\pi$, we arrive at the identity $e^{i\pi} =
 	
 	In a similar vein, we can show that $\boxed{\dfrac{e^{ix} - e^{-ix}}{2i} = \sin(x)}$ (note the $i$ in the denominator).
 	
-\end{enumerate}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Differentiation} \label{sec:diff}
-No matter which form it takes, the \Sch\ equation is inherently a differential equation, so we should be prepared to work with derivatives in this course. Before jumping into the math, it's important to understand at a high level what a derivative represents. \par 
-\begin{enumerate}[1.]
-	\item Namely, the \textbf{first derivative} represents the slope of a tangent line to the function, or the instantaneous rate of change.
-	\item The \textbf{second derivative} tells us the concavity of the function, where a positive value symbolizes concave up and a negative value for concave down.
-\end{enumerate} 
+No matter which form it takes, the \Sch\ equation is inherently a differential equation, so we should be prepared to work with derivatives in this course. Before jumping into the math, it's important to understand at a high level what a derivative represents.
 
-\textbf{Note}: I will be using both $\dv{x} f$ and $f'$ notation for derivatives, so I kindly ask for your patience and flexibility. This might also be the first time you see the notation $\pdv{x} f$, which represents a \emph{partial} derivative of $f$ with respect to the variable $x$. We won't be working with them too much, but know that it behaves exactly the same way as a normal derivative would. It's written this way to clarify that the function $f$ depends on more variables than just $x$, and we would only like to know how it changes with respect to changes in $x$. \par 
+\begin{itemize}
+	\item Namely, the \textbf{first derivative} represents the slope of a tangent line to the function, or the instantaneous rate of change.
+	
+	\item The \textbf{second derivative} tells us the concavity of the function, where a positive value symbolizes concave up and a negative value for concave down.	
+\end{itemize} 
+
+\textbf{Note}: I will be using both $\dv{x} f$ and $f'$ notation for derivatives, so I kindly ask for your patience and flexibility. This might also be the first time you see the notation $\pdv{x} f$, which represents a \emph{partial} derivative of $f$ with respect to the variable $x$. We won't be working with them too much, but know that it behaves exactly the same way as a normal derivative would. It's written this way to clarify that the function $f$ depends on more variables than just $x$, and we would only like to know how it changes with respect to changes in $x$. 
 
 The three main types of functions you will need to differentiate are:
-\begin{enumerate}[1.]
+\begin{itemize}
 	\item Polynomial: We apply the power rule, $\dv{x} x^n = nx^{n-1}$.
 	\item Exponential: The derivative $ \dv{x} e^{f(x)} = f'(x)e^{f(x)}$.
 	\item Trigonometric: $\dv{x} \cos(x) = -\sin(x)$. $\dv{x} \sin(x) = \cos(x)$. 
-\end{enumerate}
+\end{itemize}
 
 In every case, watch out for 
 \begin{itemize}
@@ -167,11 +170,12 @@ where the direction of the force is opposite the energy gradient (e.g. a hill sl
 
 You should already know the expressions for the different forms of energy, shown in the table below. \par 
 \begin{table}[!h]
+	\renewcommand{\arraystretch}{1.2}
 	\centering 
 	\begin{tabular}{ll}
-		\textbf{Form} & \textbf{Expression} \\ \toprule 
-		Gravitational potential energy & $U_g = mgh$ \\ \rule{0ex}{3ex}
-		Elastic potential energy & $U_e = \frac{1}{2}kx^2$ \\ \rule{0ex}{3ex}
+		\textbf{Form} & \textbf{Expression} \\ \midrule 
+		Gravitational potential energy & $U_g = mgh$ \\ 
+		Elastic potential energy & $U_e = \frac{1}{2}kx^2$ \\ 
 		Kinetic energy & $K = \frac{1}{2}mv^2$
 	\end{tabular}
 \end{table} 
@@ -183,13 +187,15 @@ The behavior of atoms and subatomic particles can often be modeled using harmoni
 
 \begin{figure}[!h]
 	\centering
-	\begin{tikzpicture}
-	\node[draw, rectangle, minimum size=8mm] (m) at (2.9,0) {$m$};
-	\draw[decoration={aspect=0.45, segment length=3mm, amplitude=3mm,coil},decorate] (0,0)--(m); 
-	\fill[pattern = north east lines] (0,-0.42) rectangle (-0.4,1);
-	\draw[thick] (0,1)--(0,-0.42)--(3.5,-0.42);
-	\end{tikzpicture}
-	\caption{Model of a simple harmonic oscillator as a mass on a spring.}
+%	\begin{tikzpicture}
+%	\node[draw, rectangle, minimum size=8mm] (m) at (2.9,0) {$m$};
+%	\draw[decoration={aspect=0.45, segment length=3mm, amplitude=3mm,coil},decorate] (0,0)--(m); 
+%	\fill[pattern = north east lines] (0,-0.42) rectangle (-0.4,1);
+%	\draw[thick] (0,1)--(0,-0.42)--(3.5,-0.42);
+%	\end{tikzpicture}
+	\includegraphics[width=0.45\linewidth]{mass-spring.pdf}
+	\caption{Model of a simple harmonic oscillator as a mass on a spring.
+	Assume the surface is frictionless.}
 	\label{fig:SHO-model}
 \end{figure} 
 
