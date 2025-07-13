@@ -7,7 +7,7 @@
 \usepackage{142crstyle}
 \begin{document}
 
-\chapter[Topology]{Topology and Indistinguishability} \label{ch:topo}
+\chapter[Topology]{Work in Progress:\\Topology and Indistinguishability} \label{ch:topo}
 %{ \doublespacing 
 As an advanced topic, we'll discuss the distinguishability (or lack thereof) of quantum particles and their topology.
 While they sound abstract, these concepts are important for...
@@ -91,8 +91,8 @@ Spin statistics connection: Fermions have half-integer spin (e.g., electrons are
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
-	\caption{foo bar}
+	\includegraphics[width=0.35\linewidth]{exchange-paths.pdf}
+	\caption{Topological viewpoint of exchange, where Path 1 does not carry out exchange and can be contracted to the pull path, but Path 2 carries out double exchange.}
 	\label{fig:exchange}
 \end{figure}
 
@@ -123,13 +123,13 @@ In relation to \autoref{fig:exchange}, we say two objects (or paths) are \textbf
 
 How does this apply to the exchange problem we saw in the previous section?
 Well, it turns out that if we study fermions from a topological viewpoint, interchanging two objects is topologically like rotating one of them!
-This can be seen in an exercise known as \textbf{Dirac's belt trick}\footnote{Also known as \href{https://en.wikipedia.org/wiki/Plate_trick}{Dirac's plate trick}.}, in which a belt is straightened so that both ends are the same orientation, e.g., flat.
+This can be seen in an exercise known as \textbf{Dirac's belt trick},\footnote{Also known as \href{https://en.wikipedia.org/wiki/Plate_trick}{Dirac's plate trick}.} in which a belt is straightened so that both ends are the same orientation, e.g., flat.
 If we give the buckle end (for easier visualization) a $2\pi$ (\SI{360}{\degree}) twist, there is no way to return the belt to the original orientation as long as both ends remain flat, regardless of how we move the belt in space.
 This rotation by $2\pi$ is equivalent to a single exchange.
 
 However, if we rotate the buckle end again by $2\pi$ (we might need a long or soft belt!), so that the total rotation along the length of the belt is $4\pi$, we will find that it is possible to loop the belt once while keeping both ends flat (i.e., a continuous transformation) and return the belt to the original, \emph{untwisted} orientation!
 This $4\pi$ rotation is equivalent to double exchange, which we said for indistinguishable particles should result in the same wave function, and we see this reflected in the unchanged orientation of the belt.
-I encourage you to get a belt (or small object for the plate trick) and try it for yourself!\footnote{This is not just a \emph{Gedankenexperiment}! Take a look at \href{https://www.youtube.com/watch?v=EgsUDby0X1M}{this video} from Trefor Bazett for inspiration.}
+I encourage you to get a belt (or small object for the plate trick) and try it for yourself!\footnote{This is not just a \emph{Gedankenexperiment}! Take a look at \href{https://www.youtube.com/watch?v=EgsUDby0X1M}{this video} from Trefor Bazett or \href{https://www.gregegan.net/APPLETS/21/21.html}{this applet} for inspiration.}
 
 In the language of topology (advanced!): Rotation through $2\pi$ corresponds to a loop in the group SO(3), but this is not homotopic to the null curve.
 On the other hand, the curve associated with a $4\pi$ rotation \emph{is} null-homotopic.
@@ -138,8 +138,9 @@ On the other hand, the curve associated with a $4\pi$ rotation \emph{is} null-ho
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
-	\caption{Topological shapes}
+	\includegraphics[width=0.8\linewidth]{topological-shapes.pdf}
+	\caption{Visualization of topological shapes. 
+	Arrows indicate which edges should be glued together and in which orientation (arrows should be aligned).}
 	\label{fig:shapes}
 \end{figure}
 
@@ -151,19 +152,19 @@ Closely study the other examples shown to convince yourself that the shapes can 
 
 Left/right $\rightarrow$ cylinder.
 Left/right, top/bottom $\rightarrow$ torus.
-Left/right with twist $\rightarrow$ Mobius strip
-Left/right, top/bottom, both with twist $\rightarrow$ RP2, real projective plane.
+Left/right with twist $\rightarrow$ M{\"o}bius strip
+Left/right, top/bottom, both with twist $\rightarrow$ $\mathbf{RP}^2$, real projective plane.
 Hard to visualize!
 Yes this is the topological space that defines how indistinguishable particles behave!
 
-We can classify these spaces using something called the \textbf{fundamental group}\footnote{While long, the \href{https://en.wikipedia.org/wiki/Fundamental_group}{Wikipedia page} on the fundamental group has many nice visuals.}. 
+We can classify these spaces using something called the \textbf{fundamental group}.\footnote{While long, the \href{https://en.wikipedia.org/wiki/Fundamental_group}{Wikipedia page} on the fundamental group has many nice visuals.}
 It classifies the types of curves/paths in a topological space by ``measuring the number of holes" (loosely speaking) in the geometric object.
 For example, take the sphere in three dimensions, which we symbolize with $S^2$ (the `2' refers to a 2D surface).
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
-	\caption{Closed curve on sphere}
+	\includegraphics[width=0.4\linewidth]{sphere-closed-curve.pdf}
+	\caption{Closed curve on sphere.}
 	\label{fig:sphere1}
 \end{figure}
 
@@ -187,10 +188,14 @@ Consider now the circle in 2D, symbolized by $S^1$, and shown in \autoref{fig:ci
 
 \begin{figure}[!ht]
 	\centering 
-	\subfloat[]{\includegraphics[width=0.3\linewidth]{example-image-a} \label{fig:circle1a}}
-	\subfloat[]{\includegraphics[width=0.3\linewidth]{example-image-a} \label{fig:circle1b}}
-	\subfloat[]{\includegraphics[width=0.3\linewidth]{example-image-a} \label{fig:circle1c}}
-	\caption{Closed curves on circle.}
+	\subfloat[]{\includegraphics[width=0.31\linewidth]{circle-null-curve.pdf} \label{fig:circle1a}} \hfill
+	\subfloat[]{\includegraphics[width=0.31\linewidth]{circle-1-curve.pdf} \label{fig:circle1b}} \hfill
+	\subfloat[]{\includegraphics[width=0.31\linewidth]{circle-2-curve.pdf} \label{fig:circle1c}}
+	\caption{Curves on a circle.
+	(a) The null curve, which is contractable (homotopic) to a point.
+	(b) A knotted curve with a winding number of 1.
+	(c) A curve with two loops cannot be contracted to either of the previous two. 
+	This path has a winding number of 2.}
 	\label{fig:circle1}
 \end{figure}
 
@@ -210,9 +215,10 @@ In this way, the fundamental group is powerful because it lets us classify diffe
 
 \begin{figure}[!ht]
 	\centering 
-	\subfloat[]{\includegraphics[width=0.3\linewidth]{example-image-a} \label{fig:sphere2a}}
-	\subfloat[]{\includegraphics[width=0.3\linewidth]{example-image-a} \label{fig:sphere2b}}
-	\caption{Punctured spheres.}
+	\subfloat[]{\includegraphics[width=0.35\linewidth]{sphere-1-hole.pdf} \label{fig:sphere2a}} \hspace{6ex}
+	\subfloat[]{\includegraphics[width=0.35\linewidth]{sphere-2-hole.pdf} \label{fig:sphere2b}}
+	\caption{(a) A punctured sphere with a single hole, where all loops on the surface are trivial.
+	(b) A double-punctured sphere, where the same loop is no longer trivial.}
 	\label{fig:sphere2}
 \end{figure}
 
@@ -245,23 +251,24 @@ Then we would have a sphere!
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
+	\subfloat[]{\includegraphics[width=0.4\linewidth]{sphere-antipodes.pdf}} \hspace{5ex} 
+	\subfloat[]{\includegraphics[width=0.42\linewidth]{sphere-antipodes-null-curve.pdf}}
 	\caption{Antipodes on a sphere.}
 	\label{fig:sphere3}
 \end{figure}
 
-Now let's look at the setup in \autoref{fig:sphere3}, where $\vec{r}$ and $-\vec{r}$ are \textbf{antipodal points} on the sphere.
+Now let's look at the setup in \autoref{fig:sphere3}a, where $\vec{r}$ and $-\vec{r}$ are \textbf{antipodal points} on the sphere.
 If we let $\vec{r} = \vec{r}_1 - \vec{r}_2$, which again we can always get by manipulating the particles' positions, then exchanging the two particles would produce $-\vec{r}$.
 
-If the particles are indistinguishable, then the topological space we have for this 2-particle system is a sphere with antipodal points identified\footnote{Which, as alluded to before, is the definition of the space RP$^2$, as explained nicely \href{https://www.popmath.org.uk/sculpmath/pagesm/plane.html}{here}.}.
+If the particles are indistinguishable, then the topological space we have for this 2-particle system is a sphere with antipodal points identified.\footnote{Which, as alluded to before, is the definition of the space RP$^2$, as explained nicely \href{https://www.popmath.org.uk/sculpmath/pagesm/plane.html}{here}.}
 
 Now we might ask: What is this space?
-Let's revisit our original activity by considering paths in this space that represent the motion of the two particles, such as the red path in \autoref{fig:sphere3}.
+Let's revisit our original activity by considering paths in this space that represent the motion of the two particles, such as the red path in \autoref{fig:sphere3}b.
 We've already seen how such a path is homotopic to the null loop as it can be collapsed to a point.
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
+	\includegraphics[width=0.4\linewidth]{sphere-single-exchange.pdf}
 	\caption{Single exchange on a sphere.}
 	\label{fig:sphere-exchange}
 \end{figure}
@@ -274,7 +281,7 @@ This is the path associated with an exchange operation, or rotation by $2\pi$.
 
 \begin{figure}[!ht]
 	\centering 
-	\includegraphics[width=0.5\linewidth]{example-image-a}
+	\includegraphics[width=0.4\linewidth]{sphere-double-exchange-top.pdf}
 	\caption{Double exchange on a sphere. (top view)}
 	\label{fig:sphere-double}
 \end{figure}
@@ -287,10 +294,10 @@ This is the loop associated with double exchange, or a rotation by $4\pi$.
 
 \begin{figure}[!ht]
 	\centering 
-	\subfloat[]{\includegraphics[width=0.2\linewidth]{example-image-a} \label{fig:sphere-double2a}}
-	\subfloat[]{\includegraphics[width=0.2\linewidth]{example-image-a} \label{fig:sphere-double2b}}
-	\subfloat[]{\includegraphics[width=0.2\linewidth]{example-image-a} \label{fig:sphere-double2c}}
-	\subfloat[]{\includegraphics[width=0.2\linewidth]{example-image-a} \label{fig:sphere-double2d}}
+	\subfloat[]{\includegraphics[width=0.23\linewidth]{sphere-double-exchange-1.pdf} \label{fig:sphere-double2a}} \hfill
+	\subfloat[]{\includegraphics[width=0.23\linewidth]{sphere-double-exchange-2.pdf} \label{fig:sphere-double2b}} \hfill
+	\subfloat[]{\includegraphics[width=0.23\linewidth]{sphere-double-exchange-3.pdf} \label{fig:sphere-double2c}} \hfill
+	\subfloat[]{\includegraphics[width=0.23\linewidth]{sphere-double-exchange-4.pdf} \label{fig:sphere-double2d}}
 	\caption{Double exchange process on a sphere.}
 	\label{fig:sphere-double2}
 \end{figure}
@@ -309,8 +316,8 @@ We have now arrived back to the beginning of the chapter, with a much more compl
 
 \begin{figure}[!ht]
 	\centering 
-	\subfloat[]{\includegraphics[width=0.4\linewidth]{example-image-a} \label{fig:circle-exchange-a}}
-	\subfloat[]{\includegraphics[width=0.4\linewidth]{example-image-a} \label{fig:circle-exchange-b}}
+	\subfloat[]{\includegraphics[width=0.4\linewidth]{circle-single-exchange.pdf} \label{fig:circle-exchange-a}} \hspace{6ex}
+	\subfloat[]{\includegraphics[width=0.4\linewidth]{circle-double-exchange.pdf} \label{fig:circle-exchange-b}}
 	\caption{Antipodes on a circle.}
 	\label{fig:circle-exchange}
 \end{figure}
@@ -335,16 +342,21 @@ If we just pull on it, it straightens out, as one might expect with a string.
 
 \begin{figure}[!ht]
 	\centering 
-	\subfloat[]{\includegraphics[width=0.4\linewidth]{example-image-a} \label{fig:loop-twist-a}}
-	\subfloat[]{\includegraphics[width=0.4\linewidth]{example-image-a} \label{fig:loop-twist-b}}
+	\subfloat[]{\includegraphics[height=2.5in]{twist-thin.pdf} \label{fig:loop-twist-a}} \hspace{8ex} 
+	\subfloat[]{\includegraphics[height=2.5in]{twist-thick.pdf} \label{fig:loop-twist-b}}
 	\caption{Twisted loops thin and thick.}
 	\label{fig:loop-twist}
 \end{figure}
 
 In fact, however, these two objects are \emph{not} topologically equivalent.
 Imagine a string with finite diameter (Figure~\ref{fig:loop-twist-b}).
-If we try to pull this string straight, the loop is gone, yes, but we would also get a double twist along the length of the string\footnote{A similar thing happens if we try to straighten a garden hose.}.
+If we try to pull this string straight, the loop is gone, yes, but we would also get a double twist along the length of the string.\footnote{A similar thing happens if we try to straighten a garden hose.}
 This is the fact that underlies how we get nontrivial phases under exchange.
+
+
+Our motivation for studying the fundamental group is to prove that the fundamental group of $SO(3)$, the group of rotations, is a cyclic group of order two. 
+In physics applications this result is interesting to us because it is associated to spin and spinor representations in quantum mechanics. 
+It explains why a rotation body can have a spin of half a quantum and no other fraction.
 
 
 
@@ -362,6 +374,14 @@ Qi and Zhang, Rev Modern Phys: https://link.aps.org/doi/10.1103/RevModPhys.83.10
 Hasan and Kane, Rev Modern Phys: https://link.aps.org/doi/10.1103/RevModPhys.82.3045
 Ando, intro, Japan: https://journals.jps.jp/doi/abs/10.7566/JPSJ.82.102001
 Choi, true intro, IEEE Spectrum: https://spectrum.ieee.org/a-beginners-guide-to-topological-materials
+
+Electronic topological insulators: bismuthene.
+
+Photonic topological insulators: Layers of GaAs and AlGaAs.
+
+Topological superconductors: superconducting metal + semiconductor, producing Majorana fermions.
+
+Topological semimetals: TaAs, CoSi, Dirac semimetals, Weyl semimetals, etc.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

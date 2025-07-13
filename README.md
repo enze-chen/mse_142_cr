@@ -3,6 +3,11 @@
 © [Enze Chen](https://mse.stanford.edu/people/enze-chen), 
 [Aaron Lindenberg](https://mse.stanford.edu/people/aaron-lindenberg)
 
+[![CC BY-NC 4.0][cc-by-nc-image]][cc-by-nc]
+
+[cc-by-nc]: http://creativecommons.org/licenses/by-nc/4.0/
+[cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
+
 
 ## About
 

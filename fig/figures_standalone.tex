@@ -492,13 +492,13 @@
 %\end{tikzpicture}
 
 %
-%simple harmonic oscillator.
-\begin{tikzpicture}
-\node[draw, rectangle, minimum size=5mm] (m) at (3,0) {$M$};
-\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (0,0)--(m); 
-\fill[pattern = north east lines] (0,-1) rectangle (-0.2,1);
-\draw[thick] (0,-1)--(0,1);
-\end{tikzpicture}
+%Simple harmonic oscillator.
+%\begin{tikzpicture}
+%\node[draw, rectangle, minimum size=5mm] (m) at (3,0) {$M$};
+%\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (0,0)--(m); 
+%\fill[pattern = north east lines] (0,-1) rectangle (-0.2,1);
+%\draw[thick] (0,-1)--(0,1);
+%\end{tikzpicture}
 
 %Atoms connected by springs
 %\begin{tikzpicture}
@@ -608,30 +608,52 @@
 %\end{tikzpicture}
 
 %% Phonon behavior
+%\begin{tikzpicture}
+%\tikzstyle{atom} = [fill, circle, minimum size=1pt];
+%\tikzstyle{atom2} = [fill, circle, minimum size=1pt, color=gray1];
+%\tikzstyle{atom3} = [fill, circle, minimum size=1pt, color=gray2];
+%\tikzstyle{arrow} = [<->, line width = 1pt]
+%
+%\node [atom3] at (0,-0.14) {};
+%\node [atom2] at (0,-0.07) {};
+%\node [atom3] at (1,0.18) {};
+%\node [atom2] at (1,0.24) {};
+%\node [atom3] at (3,0.42) {};
+%\node [atom2] at (3,0.36) {};
+%\node [atom3] at (4,0.14) {};
+%\node [atom2] at (4,0.07) {};
+%\node [atom3] at (5,-0.18) {};
+%\node [atom2] at (5,-0.24) {};
+%
+%\node [atom] at (0,0) {};
+%\node [atom] at (1,0.3) {};
+%\node [atom] at (2,0.6) {};
+%\node [atom] at (3,0.3) {};
+%\node [atom] at (4,0.0) {};
+%\node [atom] at (5,-0.3) {};
+%
+%\draw [line width = 1pt, dotted] (-0.5,0)--(5.5,0);
+%\end{tikzpicture}
+
+%% Exchange paths
 \begin{tikzpicture}
 \tikzstyle{atom} = [fill, circle, minimum size=1pt];
-\tikzstyle{atom2} = [fill, circle, minimum size=1pt, color=gray1];
-\tikzstyle{atom3} = [fill, circle, minimum size=1pt, color=gray2];
-\tikzstyle{arrow} = [<->, line width = 1pt]
 
-\node [atom3] at (0,-0.14) {};
-\node [atom2] at (0,-0.07) {};
-\node [atom3] at (1,0.18) {};
-\node [atom2] at (1,0.24) {};
-\node [atom3] at (3,0.42) {};
-\node [atom2] at (3,0.36) {};
-\node [atom3] at (4,0.14) {};
-\node [atom2] at (4,0.07) {};
-\node [atom3] at (5,-0.18) {};
-\node [atom2] at (5,-0.24) {};
+%\node (1) at (0, 0) {};
+%\node (2) at (2, 0) {};
+%\draw (1) [arrows=->, red, line width=1.4, out=50, in=130] to (2);
+
+%\draw [red, line width=1.4, arrows=->] plot [smooth] coordinates {(0, 0) (0.5, 0.45) (1, 0.6) (1.5, 0.5) (1.7, 0.4) (1.95, 0.2) (2,0)};
+%\draw [red, line width=1.4] plot [smooth] coordinates {(2,-0.02) (1.95, -0.2) (1.7, -0.4) (1.5,-0.5) (1,-0.6) (0.5, -0.45) (0, 0)};
+\draw (0, 0) [red, line width=1.4, arrows=->, out=80, in=100] to (2, 0);
+\draw (2, 0) [red, line width=1.4, out=-100, in=-80] to (0, 0);
+\draw [red] (2, 0.65) circle [radius=0.2] node [red] {\small 1};
+
+\draw (0, 0) [blue, line width=1.4, arrows=->, out=85, in=95] to (4, 0);
+\draw (4, 0) [blue, line width=1.4, out=-95, in=-85] to (0, 0);
+\draw [blue] (4.2, 0.65) circle [radius=0.2] node [blue] {\small 2};
 
 \node [atom] at (0,0) {};
-\node [atom] at (1,0.3) {};
-\node [atom] at (2,0.6) {};
-\node [atom] at (3,0.3) {};
-\node [atom] at (4,0.0) {};
-\node [atom] at (5,-0.3) {};
-
-\draw [line width = 1pt, dotted] (-0.5,0)--(5.5,0);
+\node [atom] at (3,0) {};
 \end{tikzpicture}
 \end{document}
