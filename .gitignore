@@ -1,6 +1,7 @@
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.bbl
+*.blg
 *.log
 *.out
 *.synctex
@@ -23,8 +24,11 @@
 /tex/chapter_10_topology.pdf
 /tex/chapter_11_computing.pdf
 
-# Jupyter notebook
+## Jupyter notebook
 __pycache__
 **.egg-info
 **.ipynb_checkpoints
 .DS_Store
+
+## Other
+fig/figures_standalone.pdf

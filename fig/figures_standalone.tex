@@ -8,8 +8,9 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{tikz, pgfplots}
 \usepgfplotslibrary{fillbetween}
-\usetikzlibrary{shapes.geometric, calc, patterns, arrows.meta, decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric, calc, patterns, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
 \usepackage{mathtools}
+\usepackage{physics}
 
 \definecolor{gray1}{rgb}{0.5, 0.5, 0.5}
 \definecolor{gray2}{rgb}{0.9, 0.9, 0.9}
@@ -636,24 +637,179 @@
 %\end{tikzpicture}
 
 %% Exchange paths
+%\begin{tikzpicture}
+%\tikzstyle{atom} = [fill, circle, minimum size=1pt];
+%
+%%\node (1) at (0, 0) {};
+%%\node (2) at (2, 0) {};
+%%\draw (1) [arrows=->, red, line width=1.4, out=50, in=130] to (2);
+%
+%%\draw [red, line width=1.4, arrows=->] plot [smooth] coordinates {(0, 0) (0.5, 0.45) (1, 0.6) (1.5, 0.5) (1.7, 0.4) (1.95, 0.2) (2,0)};
+%%\draw [red, line width=1.4] plot [smooth] coordinates {(2,-0.02) (1.95, -0.2) (1.7, -0.4) (1.5,-0.5) (1,-0.6) (0.5, -0.45) (0, 0)};
+%\draw (0, 0) [red, line width=1.4, arrows=->, out=80, in=100] to (2, 0);
+%\draw (2, 0) [red, line width=1.4, out=-100, in=-80] to (0, 0);
+%\draw [red] (2, 0.65) circle [radius=0.2] node [red] {\small 1};
+%
+%\draw (0, 0) [blue, line width=1.4, arrows=->, out=85, in=95] to (4, 0);
+%\draw (4, 0) [blue, line width=1.4, out=-95, in=-85] to (0, 0);
+%\draw [blue] (4.2, 0.65) circle [radius=0.2] node [blue] {\small 2};
+%
+%\node [atom] at (0,0) {};
+%\node [atom] at (3,0) {};
+%\end{tikzpicture}
+
+%% No clone theorem
+%\begin{tikzpicture}[square/.style={regular polygon,regular polygon sides=4}]
+%\node at (0,0) {$\ket{\psi} \ket{0} \stackrel{U}{\longrightarrow} \ket{\psi} \ket{\psi}$};
+%
+%\node (1) at (3,-0.08) {$\ket{\psi}$};
+%\node (2) at (3,-1.08) {$\ket{0}$};
+%
+%\node (3) at (7,-0.08) {$\ket{\psi}$};
+%\node (4) at (7,-1.08) {$\ket{\psi}$};
+%
+%\draw (1) to (3);
+%\draw (2) to (4);
+%
+%\node at (5,-0.58) [square, draw, fill=white, minimum size=0.8in] {};
+%\end{tikzpicture}
+
+%% CNOT gate 1
+%\begin{tikzpicture}
+%\tikzstyle {dot} = [draw, circle, minimum height=1mm, fill=black];
+%
+%\node (1) [dot] at (1,0) {};
+%\node (2) [draw, circle, radius=0.7mm] at (1,-1) {};
+%\node at (1,-1) {\Large +};
+%
+%\node (3) [anchor=east] at (0,0) {$x$};
+%\node [anchor=east, font=\fontsize{8}{30}\selectfont] at (-0.3,0) {(control)};
+%\node (4) [anchor=east] at (0,-1) {$y$};
+%\node [anchor=east, font=\fontsize{8}{30}\selectfont] at (-0.3,-1) {(target)};
+%\node (5) [anchor=west] at (2,0) {$x$};
+%\node (6) [anchor=west] at (2,-1) {$x \oplus y$};
+%
+%\draw [line width=1.3] (1) to (2);
+%\draw [line width=1.3] (3) to (1);
+%\draw [line width=1.3] (4) to (2);
+%\draw [line width=1.3] (1) to (5);
+%\draw [line width=1.3] (2) to (6);
+%\end{tikzpicture}
+
+%% CNOT gate 2
+%\begin{tikzpicture}
+%	\tikzstyle {dot} = [draw, circle, minimum height=1mm, fill=black];
+%	
+%	\node (1) [dot] at (1.5,0) {};
+%	\node (2) [draw, circle, radius=0.7mm] at (1.5,-1) {};
+%	\node at (1.5,-1) {\Large +};
+%	\node (3) [draw] at (0,0) {$H$};
+%	
+%	\node (4) [anchor=east] at (-1,0) {$\ket{0}$};
+%	\node (5) [anchor=east] at (-1,-1) {$\ket{0}$};
+%	\node (6) [anchor=west] at (2.5,0) {};
+%	\node (7) [anchor=west] at (2.5,-1) {\small $\dfrac{1}{\sqrt{2}} \left( \mathrm{CN} \ket{100} + \mathrm{CN}\ket{110} \right)$};
+%	
+%	\draw [line width=1.3] (1) to (2);
+%	\draw [line width=1.3] (3) to (1);
+%	\draw [line width=1.3] (4) to (3);
+%	\draw [line width=1.3] (5) to (2);
+%	\draw [line width=1.3] (1) to (6);
+%	\draw [line width=1.3] (2) to (7);
+%\end{tikzpicture}
+
+%% CNOT gate 3
+%\begin{tikzpicture}[square/.style={regular polygon,regular polygon sides=4}]
+%\node (1) at (3,-0.08) {$x$};
+%\node (2) at (3,-1.08) {$y$};
+%
+%\node (3) [anchor=west] at (7,-0.08) {$x$};
+%\node (4) [anchor=west] at (7,-1.08) {$y \oplus f(x)$};
+%
+%\draw (1) to (3);
+%\draw (2) to (4);
+%
+%\node at (5,-0.58) [square, draw, fill=white, minimum size=0.8in] {$U$};
+%\end{tikzpicture}
+
+%% EPR 1
+%\begin{tikzpicture}
+%	\tikzstyle {dot} = [draw, circle, minimum height=1mm, fill=black];
+%	
+%	\node (1) [dot] at (1.5,0) {};
+%	\node (2) [draw, circle, radius=0.7mm] at (1.5,-1) {};
+%	\node at (1.5,-1) {\Large +};
+%	\node (3) [draw] at (0,0) {$H$};
+%	\node (8) [draw] at (0,-1) {$H$};
+%	
+%	\node (4) [anchor=east] at (-1,0) {$\ket{0}$};
+%	\node (5) [anchor=east] at (-1,-1) {$\ket{1}$};
+%	\node (6) [draw] at (3,0) {$H$};
+%	\node (7) [draw] at (4.5,0) {$\frown$};
+%	
+%	\draw [line width=1.3] (1) to (2);
+%	\draw [line width=1.3] (3) to (1);
+%	\draw [line width=1.3] (4) to (3);
+%	\draw [line width=1.3] (5) to (8);
+%	\draw [line width=1.3] (8) to (2);
+%	\draw [line width=1.3] (1) to (6);
+%	\draw [line width=1.3] (6) to (7);
+%	\draw [line width=1.3] (2) to (2.5,-1);
+%\end{tikzpicture}
+
+%% EPR 2
+%\begin{tikzpicture}
+%	\node (1) at (0,0) {};
+%	\node (2) [anchor=west] at (2,0) {$\ket{0}$};
+%	\node (3) at (0,2) {$\ket{1}$};
+%	\node (4) [anchor=west] at (0.5, 1.414) {$\ket{0} + \ket{1}^{\ket{+}}$};
+%	\node (5) [anchor=west] at (0.5,-1.414) {$\ket{0} - \ket{1}^{\ket{-}}$};
+%	
+%	\draw [line width=1.3] (0,0) to (2);
+%	\draw [line width=1.3] (0,0) to (3);
+%	\draw [line width=1.3] (0,0) to (4);
+%	\draw [line width=1.3] (0,0) to (5);
+%\end{tikzpicture}
+
+%% EPR 3
 \begin{tikzpicture}
-\tikzstyle{atom} = [fill, circle, minimum size=1pt];
-
-%\node (1) at (0, 0) {};
-%\node (2) at (2, 0) {};
-%\draw (1) [arrows=->, red, line width=1.4, out=50, in=130] to (2);
-
-%\draw [red, line width=1.4, arrows=->] plot [smooth] coordinates {(0, 0) (0.5, 0.45) (1, 0.6) (1.5, 0.5) (1.7, 0.4) (1.95, 0.2) (2,0)};
-%\draw [red, line width=1.4] plot [smooth] coordinates {(2,-0.02) (1.95, -0.2) (1.7, -0.4) (1.5,-0.5) (1,-0.6) (0.5, -0.45) (0, 0)};
-\draw (0, 0) [red, line width=1.4, arrows=->, out=80, in=100] to (2, 0);
-\draw (2, 0) [red, line width=1.4, out=-100, in=-80] to (0, 0);
-\draw [red] (2, 0.65) circle [radius=0.2] node [red] {\small 1};
-
-\draw (0, 0) [blue, line width=1.4, arrows=->, out=85, in=95] to (4, 0);
-\draw (4, 0) [blue, line width=1.4, out=-95, in=-85] to (0, 0);
-\draw [blue] (4.2, 0.65) circle [radius=0.2] node [blue] {\small 2};
-
-\node [atom] at (0,0) {};
-\node [atom] at (3,0) {};
+	\tikzstyle {dot} = [draw, circle, minimum height=1mm, fill=black];
+	
+	\node (1) [dot] at (1.5,0) {};
+	\node (2) [draw, circle, radius=0.7mm] at (1.5,-1) {};
+	\node at (1.5,-1) {\Large +};
+	
+	\node (3) at (0,0) {$\ket{1}$};
+	\node (4) at (0,-1) {$\ket{\beta_{00}}$};
+	\node (5) [draw] at (3,0) {$H$};
+	\node (6) [draw] at (4.5,0) {$\frown$};
+	\node (7) [draw] at (4.5,-1) {$\frown$};
+	\node (8) [draw] at (6,-2) {\small $X^{M_2}$};
+	\node (9) [draw] at (8,-2) {\small $Z^{M_2}$};
+	\node (10) at (9.5,-2) {$\ket{\psi}$};
+	
+	\draw [line width=1.3] (1) to (2);
+	\draw [line width=1.3] (3) to (1);
+	\draw [line width=1.3] (4) to (2);
+	\draw [line width=1.3] (1) to (5);
+	\draw [line width=1.3] (5) to (6);
+	\draw [line width=1.3] (2) to (7);
+	\draw [line width=1.3] (7) to (6,-1) to (8);
+	\draw [line width=1.3] (1.5,-2) to (8);
+	\draw [line width=1.3] (8) to (9);
+	\draw [line width=1.3] (6) to (8,0) to (9);
+	\draw [line width=1.3] (9) to (10);
+	
+	\node [anchor=south] at (0.75,0) {\tiny $\ket{\psi_0}$};
+	\node [anchor=south] at (2.25,0) {\tiny $\ket{\psi_1}$};
+	\node [anchor=south] at (3.75,0) {\tiny $\ket{\psi_2}$};
+	\node [anchor=south] at (5.2,0) {\tiny $M_1$};
+	\node [anchor=south] at (5.2,-1) {\tiny $M_2$};
+	
+	\draw [decorate, decoration = {brace}, thick] (-0.5,-1.3) -- (-0.5,0.3);
+	\node [anchor=east] at (-0.55, -0.5) {\small Alice};
+	\draw [decorate, decoration = {brace}, thick] (-0.5,-2.25) -- (-0.5,-1.7);
+	\node [anchor=east] at (-0.55, -2) {\small Bob};
 \end{tikzpicture}
+
 \end{document}

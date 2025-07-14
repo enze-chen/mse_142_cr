@@ -9,9 +9,11 @@
 
 \chapter[Quantum computing]{Work in Progress:\\Quantum Computing} \label{ch:computing}
 %{ \doublespacing 
-As an advanced topic, we'll discuss the distinguishability (or lack thereof) of quantum particles and their topology.
-While they sound abstract, these concepts are important for...
-We'll just sketch the main ideas here, and encourage you to consult other resources for a more thorough treatment.
+As an advanced topic, we'll discuss the advantages of quantum computing.
+
+
+For more information, see this article: https://dl.acm.org/doi/10.1145/367701.367709
+or this book: https://doi.org/10.1093/oso/9780192857972.001.0001
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,12 +32,8 @@ We include links to resources that may aid your review, as mastery of these conc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{What even is a quantum computer?}
 
-TODO 
-
-
-\subsection{Introduction to formalisms}
+\section{Introduction to formalisms}
 
 Imagine a general two-level system, which could represent spin states or a light-activated system, that we will represent as $\ket{0}$ and $\ket{1}$.
 We could write them in a different way, in vector notation, as follows:
@@ -101,15 +99,15 @@ There is no obvious way to sample coefficients.
 Perhaps... we can try to be clever and make many copies and then measure many times to sample?
 Unfortunately not---the quantum no-cloning theorem!
 
-\textbf{Put the definition box here}
+\textbf{Put the definition box for no-cloning theorem here}
 
 We'll sketch the idea for this theorem below.
 Suppose there is an operator $U$ that is linear (and unitary) that can clone an arbitrary state $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$.
-We would have:
+We would have the configuration picture in \autoref{fig:no-clone-1}.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{no-clone-1.png}
+	\includegraphics[width=0.6\linewidth]{no-clone-1.pdf}
 	\caption{Caption}
 	\label{fig:no-clone-1}
 \end{figure}
@@ -142,7 +140,7 @@ But this is not successfully cloned, since it should equal
 Therefore, $U$ does not exist.
 
 
-\subsection{Allowed operators}
+\section{Allowed operators}
 
 So what kind of operators are allowed?
 For quantum logic gates, we have
@@ -158,14 +156,15 @@ For quantum logic gates, we have
 \end{itemize}
 
 
-\subsection{Bloch sphere}
+\section{Bloch sphere}
 
-Another way to visualize the qubit state is on a construct called the \textbf{Bloch sphere}, which has $\ket{0}$ and $\ket{1}$ on the north and south pole, respectively, and all possible qubit states represented on the surface of the sphere.
+Another way to visualize the qubit state is on a construct called the \textbf{Bloch sphere} (\autoref{fig:bloch-sphere}), which has $\ket{0}$ and $\ket{1}$ on the north and south pole, respectively, and all possible qubit states represented on the surface of the sphere.
 Note that classical bits are restricted to exactly $\ket{0}$ or $\ket{1}$, but quantum allows everything in between.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.8\linewidth]{bloch-sphere.png}
+	\subfloat[]{\includegraphics[width=0.3\linewidth]{bloch-sphere-1.pdf}} \hspace{10ex}
+	\subfloat[]{\includegraphics[width=0.3\linewidth]{bloch-sphere-2.pdf}}
 	\caption{(a) Bloch sphere. (b) explicit $xyz$ coordinates.}
 	\label{fig:bloch-sphere}
 \end{figure}
@@ -209,18 +208,18 @@ In matrix representation, this is expressed as
 This generates equally weighted superposition states.
 It is visualized as a rotation by $\pi/2$.
 
-\subsection{2-qubit gates}
+\section{2-qubit gates}
 
 Consider the following setup:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.3\linewidth]{two-qubit-1.png}
-	\caption{Caption}
-	\label{fig:two-qubit-1}
+	\includegraphics[height=0.8in]{cnot-1.pdf}
+	\caption{CNOT gate}
+	\label{fig:cnot-1}
 \end{figure}
 
-We'll now consider the \texttt{CNOT} operation (\autoref{fig:two-qubit-1}) which performs \texttt{NOT} on the second qubit only when the first qubit is 1.
+We'll now consider the \texttt{CNOT} operation (\autoref{fig:cnot-1}) which performs \texttt{NOT} on the second qubit only when the first qubit is 1.
 That is, we have
 
 \begin{align*}
@@ -236,12 +235,12 @@ In the matrix representation,
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.5\linewidth]{two-qubit-2.png}
+	\includegraphics[height=0.8in]{cnot-2.pdf}
 	\caption{Caption}
-	\label{fig:two-qubit-2}
+	\label{fig:cnot-2}
 \end{figure}
 
-\autoref{fig:two-qubit-2} has a simplified example of such a configuration.
+\autoref{fig:cnot-2} has a simplified example of such a configuration.
 On the control side, $\ket{0} \stackrel{H}{\rightarrow} \frac{1}{\sqrt{2}} \left( \ket{0} + \ket{1} \right)$.
 For the target, $\ket{0} \rightarrow \frac{1}{\sqrt{2}} \left( \ket{00} + \ket{11} \right)$.
 This is a maximally entangled state: If we measure qubit 1 ($Q_1$), we would get 0,1 with \SI{50}{\percent} probability.
@@ -263,16 +262,20 @@ Imagine we have a black box that takes input $x$ and outputs $f(x)$.
 $x$ can take on values 0 and 1, as can $f(x)$.
 We want to know if $f(0) = f(1)$ (constant) or $f(0) \neq f(1)$ (balanced).
 Classically, we would need to measure both $f(0)$ and $f(1)$, but our box is so slow that each computation takes \SI{24}{\hour}. 
-Instead, consider the following quantum gate (\texttt{CNOT}):
+Instead, consider the following quantum gate (\texttt{CNOT}) in \autoref{fig:cnot-3}:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=\linewidth]{two-qubit-3.png}
+	\includegraphics[width=0.4\linewidth]{cnot-3.pdf}
 	\caption{Caption}
-	\label{fig:two-qubit-3}
+	\label{fig:cnot-3}
 \end{figure}
 
 where the $\oplus$ symbol represents addition modulo 2, and the result is that the second bit is flipped only if $f$ acting on the first qubit is 1 (otherwise does nothing).
+Written out, this is 
+
+\[ U: \ket{x,y} \rightarrow \ket{x, y \oplus f(x)} \]
+
 To this machine we input the superposition state for the second qubit, $\frac{1}{\sqrt{2}}\left( \ket{0} - \ket{1} \right)$.
 This would return:
 
@@ -290,12 +293,13 @@ OK, so now let's consider making the first qubit also a superposition:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.3\linewidth]{quantum-epr.png}
-	\caption{Caption}
-	\label{fig:quantum-epr}
+	\subfloat[]{\includegraphics[height=0.7in]{epr-1.pdf}} \hspace{10ex}
+	\subfloat[]{\includegraphics[height=1.8in]{epr-2.pdf}}
+	\caption{EPR paradox}
+	\label{fig:epr}
 \end{figure}
 
-We illustrate this in \autoref{fig:quantum-epr}.
+We illustrate this in \autoref{fig:epr}.
 Now we apply the Hadamard operator on the first qubit:
 
 \begin{align*}
@@ -309,10 +313,11 @@ If $f(0) = f(1)$ (constant), then we always measure $\ket{0}$ with a \SI{100}{\p
 On the other hand, if $f(0) \neq f(1)$ (balanced), then we always measure $\ket{1}$.
 This is the quantum parallelism, and it shows how one can manipulate states to determine measurement outcomes. 
 
-\subsection{Quantum teleportation}
+\section{Quantum teleportation}
 
 Now let's see how we can take advantage of entanglement. 
 We'll start with a EPR pair: $\frac{1}{\sqrt{2}} (\ket{00} + \ket{11})$.
+Recall we can generate this using the protocol in \autoref{fig:cnot-2}.
 Alice takes the first qubit, while Bob takes the 2nd one and travels.
 Now Alice wants to deliver a qubit $\ket{\psi}$ to Bob, where $\ket{\psi} = \alpha \ket{0} + \beta \ket{1}$.
 Note the following:
@@ -335,15 +340,15 @@ Note the following:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=\linewidth]{three-qubit.png}
-	\caption{Caption}
+	\includegraphics[width=\linewidth]{three-qubit.pdf}
+	\caption{Three-qubit problem.}
 	\label{fig:three-qubit}
 \end{figure}
 
 \autoref{fig:three-qubit} presents the 3-qubit problem, where Alice has two of them.
 The input ``s a $\ket{\psi_o}$" equals
 
-\[ \ket{\psi} \ket{\beta_{\infty}} = \left( \alpha \ket{0} + \beta \ket{1} \right) \otimes \frac{1}{\sqrt{2}} \left( \ket{00} + \ket{11} \right) = \frac{1}{\sqrt{2}} \left( \alpha \ket{000} + \alpha \ket{011} + \beta \ket{100} + \beta \ket{111} \right) \]
+\[ \ket{\psi} \ket{\beta_{00}} = \left( \alpha \ket{0} + \beta \ket{1} \right) \otimes \frac{1}{\sqrt{2}} \left( \ket{00} + \ket{11} \right) = \frac{1}{\sqrt{2}} \left( \alpha \ket{000} + \alpha \ket{011} + \beta \ket{100} + \beta \ket{111} \right) \]
 
 After \texttt{CNOT}, $\ket{\psi_1} = \frac{1}{\sqrt{2}} \left( \alpha \ket{000} + \alpha \ket{011} + \beta \ket{110} + \beta \ket{101} \right)$.
 
@@ -370,7 +375,7 @@ If $\ket{01}$ is measured, Bob just applies $X$ gate.
 If $\ket{10}$ is measured, apply $Z$ gate.
 If $\ket{11}$ is measured, apply both $X$ and $Z$.
 
-\subsection{General comments on entanglement}
+\section[General comments]{General comments on entanglement}
 
 For a single spin, the basis is $\ket{\uparrow}$ and $\ket{\downarrow}$.
 A superposition state is composed of $c_{\uparrow} \ket{\uparrow} + c_{\downarrow} \ket{\downarrow}$.
@@ -396,14 +401,10 @@ ER : EPR : Wormhole = 2 entangled black holes.
 
 Can we test quantum gravity in the laboratory via the creation of entangled states?
 
-\section{Application: N-V center in diamond}
-
-TODO 
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Application: Superconducting qubits or spin qubits in Si}
+\section[Applications]{Application: Superconducting qubits or spin qubits in Si}
 
 Superconducting Qubits: Superconducting materials are among the most widely used implementations of qubits. You can explore how materials such as niobium and aluminum are employed to create Josephson junctions, essential for superconducting qubits. Discuss the quantum coherence of these materials and how their superconducting properties enable low-resistance pathways, crucial for creating stable qubit states that elevate the performance of quantum processors.
 
