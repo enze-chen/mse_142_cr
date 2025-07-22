@@ -180,12 +180,12 @@ where we have introduced a quantum number $n$ as an index for the allowed soluti
 
 If we look carefully at this equation and compare it to Equation~\ref{eq:sch-qho}, we see that they are the same form! This says in particular that if $\psi_n$ is a solution of the QHO with energy $E_n$, then $a\psi_n$ is also a solution, with energy $E_n-\hbar\omega$. This is a key result and explains why $a$ is called the lowering operator. From a known solution one can essentially generate all other known solutions of lower energy by applying this operator. This is quite handy!
 
-So imagine that one starts from some known solution and starts applying this operator, generating lower and lower energy states. At some point one must find the ground state solution. But what happens if one then applies the lowering operator to this? If this gives some new function, then this can't really have been the ground state! We therefore conclude that the ground state wave function must satisfy the simple equation
+So imagine that one starts from some known solution and starts applying this operator, generating lower and lower energy states. At some point one must find the ground state solution. But what happens if one then applies the lowering operator to this? If this gives some new function, then this can't really have been the ground state! We therefore conclude that the ground state wavefunction must satisfy the simple equation
 \begin{equation*}
 a\psi_0 = 0
 \end{equation*}
 
-Here you can really see how we have successfully factorized the initial second order differential equation (Equation~\ref{eq:se-qho}) to obtain a solution for the wave function. In particular, we can use the right hand side of Equation~\ref{eq:annihile} to substitute for the lowering operator $a$ and obtain a first order differential equation:
+Here you can really see how we have successfully factorized the initial second order differential equation (Equation~\ref{eq:se-qho}) to obtain a solution for the wavefunction. In particular, we can use the right hand side of Equation~\ref{eq:annihile} to substitute for the lowering operator $a$ and obtain a first order differential equation:
 \begin{equation*}
 	\left(x + \frac{\hbar}{m\omega} \dv{x}\right)\psi_0 = 0
 \end{equation*}
@@ -199,7 +199,7 @@ We can solve this using separation of variables as follows.
 	\Aboxed{\psi_0 &= A \exp \left(-\frac{m\omega}{2\hbar}x^2\right)} \numberthis
 \end{align*}
 
-We have to normalize the wave function the same way we always do, which allows us to solve for $A$ as
+We have to normalize the wavefunction the same way we always do, which allows us to solve for $A$ as
 \begin{align*}
 	\int_{-\infty}^{\infty} \abs{\psi_0}^2 \dd{x} &= 1 \\
 	\abs{A}^2 \int_{-\infty}^{\infty} \exp \left(-\frac{m\omega}{\hbar} x^2 \right) \dd{x} &= 1 \\
@@ -214,12 +214,12 @@ Combining these two results finally gives us
 	\end{equation}
 \end{tcolorbox}
 
-One can easily substitute this back into the \Sch\ equation to verify this does indeed solve the differential equation. A sketch of this wave function has a Gaussian shape within the boundary of the potential with probability maximized at the center of the quadratic potential, analogous to the equilibrium position of the effective mass on a spring (Figure~\ref{fig:qho-ground}). The key difference between this state and its classical analogue is that the quantum ground state has non-zero energy.
+One can easily substitute this back into the \Sch\ equation to verify this does indeed solve the differential equation. A sketch of this wavefunction has a Gaussian shape within the boundary of the potential with probability maximized at the center of the quadratic potential, analogous to the equilibrium position of the effective mass on a spring (Figure~\ref{fig:qho-ground}). The key difference between this state and its classical analogue is that the quantum ground state has non-zero energy.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.38\linewidth]{qho-ground}
-	\caption{A sketch of the ground state of the particle inside the parabolic potential. The wave function has a Gaussian profile within the parabolic potential and it is centered about the minimum.}
+	\caption{A sketch of the ground state of the particle inside the parabolic potential. The wavefunction has a Gaussian profile within the parabolic potential and it is centered about the minimum.}
 	\label{fig:qho-ground}
 \end{figure}
 
@@ -278,7 +278,7 @@ Since we work with probabilities in quantum mechanics, it is only suitable (and 
 \begin{equation}
 	\expval{g(x)} = \sum_{i=1}^{\infty} g(x_i) p(x_i)
 \end{equation}
-where $p(x_i)$ is the probability of obtaining $g(x_i)$. This is the case for \emph{discrete} variables, such as the expected value of the roll of a die. For \emph{continuous} variables, we can't use a single probability for a point (it would be equal to zero) but rather a \textbf{probability density} $\rho(x)$ that can be applied over an interval. You're already experienced with probability densities since you've worked with the modulus squared of the wave function. Now our definition for the expectation of a function of a continuous variable becomes
+where $p(x_i)$ is the probability of obtaining $g(x_i)$. This is the case for \emph{discrete} variables, such as the expected value of the roll of a die. For \emph{continuous} variables, we can't use a single probability for a point (it would be equal to zero) but rather a \textbf{probability density} $\rho(x)$ that can be applied over an interval. You're already experienced with probability densities since you've worked with the modulus squared of the wavefunction. Now our definition for the expectation of a function of a continuous variable becomes
 \begin{equation}
 	\expval{f(x)} = \int_{-\infty}^{\infty} f(x) \rho(x) \dd{x}
 \end{equation}
@@ -402,7 +402,7 @@ and the orthogonality condition is satisfied.
 By now we've seen just how powerful the QHO model is and how useful some of these properties are. The existence of an exact, analytical solution to the QHO makes it a powerful framework for developing more advanced theories to analyze complex quantum mechanical systems. We mentioned at the beginning of this chapter how the QHO could be used to model subatomic particles and the forces between atoms, but a proper treatment involves delving a little deeper into \textbf{quantum field theory} (QFT), which is a framework that is partially derived from the concepts presented in this chapter. Rather than cramming this rich topic into a section here, we will instead be devoting the entire next chapter to QFT and combining the results from QFT and the QHO to analyze vibrational modes in solids called \textbf{phonons}. Stay tuned! \par 
 
 % TODO: Consider adding power series to Appendix C?
-For the time being, however, let's briefly revisit the wave function solutions we derived earlier. We sidestepped a lot of the ugly algebra by employing the ladder operators method, but I would be doing you a disservice (particularly if you continue to study quantum mechanics in a different field like physics or electrical engineering), if I didn't at least \emph{mention} the analytic method using \textbf{power series}.\footnote{We will skip all the details here, but there's a thorough derivation in Griffiths, Chapter 2.3.} When we work out the math, we arrive at the following expression for the stationary states of the QHO:\footnote{I encourage you to derive another expression for the $n$th stationary state using just the ladder operators! \emph{Hint}: The expression is far more concise, albeit recursive.} 
+For the time being, however, let's briefly revisit the wavefunction solutions we derived earlier. We sidestepped a lot of the ugly algebra by employing the ladder operators method, but I would be doing you a disservice (particularly if you continue to study quantum mechanics in a different field like physics or electrical engineering), if I didn't at least \emph{mention} the analytic method using \textbf{power series}.\footnote{We will skip all the details here, but there's a thorough derivation in Griffiths, Chapter 2.3.} When we work out the math, we arrive at the following expression for the stationary states of the QHO:\footnote{I encourage you to derive another expression for the $n$th stationary state using just the ladder operators! \emph{Hint}: The expression is far more concise, albeit recursive.} 
 \begin{equation}
 	\psi_n(x) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} \frac{1}{\sqrt{2^n \cdot n!}} H_n \left(\sqrt{\frac{m\omega}{\hbar}}x\right) \exp \left(-\frac{m\omega x^2}{2\hbar}\right) \label{eq:pow-qho}
 \end{equation}
@@ -422,7 +422,7 @@ More concretely, the first few Hermite polynomials are
 	H_4(z) &= 16z^4 - 48z^2 + 12
 \end{align*}
 
-The benefit of this method is that we have a closed-form expression for the wave function at any energy level. We already saw what the ground state $\psi_0$ looked like, which had maximum amplitude at the center of the quadratic potential, so now we plot $\abs{\psi_{50}}$ in Figure~\ref{fig:qho-50}.
+The benefit of this method is that we have a closed-form expression for the wavefunction at any energy level. We already saw what the ground state $\psi_0$ looked like, which had maximum amplitude at the center of the quadratic potential, so now we plot $\abs{\psi_{50}}$ in Figure~\ref{fig:qho-50}.
 
 \begin{figure}[!h]
 	\centering

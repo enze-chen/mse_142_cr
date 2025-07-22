@@ -1,7 +1,7 @@
 % Created: Enze Chen, June 2017
 % Last edited: Enze Chen, December 2017
 %
-% Chapter 5 of the MSE 142 coursereader. This chapter discusses the Kronig-Penney model for periodic potential barriers. It doesn't delve too deep into the math behind Bloch wave functions, but just applies the result to calculate allowed energies. This is a good model for electron transport through a solid and we will apply to result to look at electronic band structure.
+% Chapter 5 of the MSE 142 coursereader. This chapter discusses the Kronig-Penney model for periodic potential barriers. It doesn't delve too deep into the math behind Bloch wavefunctions, but just applies the result to calculate allowed energies. This is a good model for electron transport through a solid and we will apply to result to look at electronic band structure.
 
 % Uncomment the following three lines and last line to individually compile this chapter
 %\documentclass[12pt, english]{book}
@@ -10,7 +10,7 @@
 
 \chapter{Periodic Potentials} \label{ch:period}
 %{ \doublespacing 
-In the last chapter, we looked at quantum tunneling through a finite potential barrier, and we argued that the wave function and its first derivative must remain continuous even at discontinuities in the potential. What happens then, if the potential barrier at the discontinuity becomes infinitely tall yet infinitely narrow, like a huge spike? We will see in this chapter how this changes our continuity condition and how quantum tunneling allows us to use this new model to understand the transport properties of materials.
+In the last chapter, we looked at quantum tunneling through a finite potential barrier, and we argued that the wavefunction and its first derivative must remain continuous even at discontinuities in the potential. What happens then, if the potential barrier at the discontinuity becomes infinitely tall yet infinitely narrow, like a huge spike? We will see in this chapter how this changes our continuity condition and how quantum tunneling allows us to use this new model to understand the transport properties of materials.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -24,7 +24,7 @@ We will start by providing a little more context around the problem at hand. In 
 	\label{fig:comb}
 \end{figure}
 
-As with every chapter, we start by considering a simple model, which in this case consists of an infinite series of periodic \textbf{delta functions} spaced a distance $d$ apart (Figure~\ref{fig:comb}). The question is how to solve for the wave function of an electron of total energy $E$ consistent with our requirement that the probability density function remains finite. This problem was first solved by Ralph Kronig and William Penney in 1931,\footnote{See R. Kronig and W. G. Penney, \href{http://rspa.royalsocietypublishing.org/content/130/814/499}{\emph{Proc. Roy. Soc. A}} \textbf{130} (1931). Their original formulation consisted of periodic rectangular blocks, while we jump straight to the typical approximation of height $\rightarrow\infty$ and width $\rightarrow0$.} so it is also known as the \textbf{Kronig-Penney model}.
+As with every chapter, we start by considering a simple model, which in this case consists of an infinite series of periodic \textbf{delta functions} spaced a distance $d$ apart (Figure~\ref{fig:comb}). The question is how to solve for the wavefunction of an electron of total energy $E$ consistent with our requirement that the probability density function remains finite. This problem was first solved by Ralph Kronig and William Penney in 1931,\footnote{See R. Kronig and W. G. Penney, \href{http://rspa.royalsocietypublishing.org/content/130/814/499}{\emph{Proc. Roy. Soc. A}} \textbf{130} (1931). Their original formulation consisted of periodic rectangular blocks, while we jump straight to the typical approximation of height $\rightarrow\infty$ and width $\rightarrow0$.} so it is also known as the \textbf{Kronig-Penney model}.
 
 The Kronig-Penney model is a good approximation for a crystal lattice, where the nuclei are periodic sites of infinite potential\footnote{OK, technically these should approach $-\infty$ to model attraction, but this way the math is simpler.} and we assume zero potential everywhere else inside the lattice. To put this in mathematical terms, we can assign a periodicity to the potential such that \begin{equation*}
 	V(x) = V(x+d)
@@ -48,20 +48,20 @@ where $\delta(x)$ is the \textbf{Dirac delta function} given by
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Bloch waves}
-Now, since the electron behaves like a free particle between the delta functions, we know that its wave functions look like $\psi_n(x) = Ae^{ik_nx}$. This means that the electron density for a regular free particle, which is proportional to $\abs{\psi(x)}^2$, is a constant value. However, a constant isn't quite the correct solution here because then the translational invariance of the probability density function would be broken by the infinite potentials. To resolve this issue, we will instead argue that due to the periodicity of the lattice, it must be the case that the probability density function is also periodic, i.e. 
+Now, since the electron behaves like a free particle between the delta functions, we know that its wavefunctions look like $\psi_n(x) = Ae^{ik_nx}$. This means that the electron density for a regular free particle, which is proportional to $\abs{\psi(x)}^2$, is a constant value. However, a constant isn't quite the correct solution here because then the translational invariance of the probability density function would be broken by the infinite potentials. To resolve this issue, we will instead argue that due to the periodicity of the lattice, it must be the case that the probability density function is also periodic, i.e. 
 
 \begin{equation}
 	\boxed{\abs{\psi(x)}^2 = \abs{\psi(x+d)}^2} \label{kp-period}
 \end{equation}
 
-In other words, if we know the probability density at one point $x$, since the potential is infinitely long and periodic (assume we are in the bulk solid and away from surfaces and grain boundaries), this means we also know the probability density at $x+d$, $x+2d$, and so on. Now, what does this imply about the wave function itself? We can guess that the wave function is also periodic, at least up to a phase factor $e^{iqx}$ (this complex number will disappear when you take the modulus squared). This fact was formally proved in 1928 by Felix Bloch to describe the wave function of electrons in a crystalline lattice,\footnote{His \href{https://link.springer.com/article/10.1007\%2FBF01339455}{original paper} is in German, but \href{https://en.wikipedia.org/wiki/Bloch_wave}{Wikipedia} also gives a good explanation and even presents a proof.} and \textbf{Bloch's theorem} allows us to write the wave function as
+In other words, if we know the probability density at one point $x$, since the potential is infinitely long and periodic (assume we are in the bulk solid and away from surfaces and grain boundaries), this means we also know the probability density at $x+d$, $x+2d$, and so on. Now, what does this imply about the wavefunction itself? We can guess that the wavefunction is also periodic, at least up to a phase factor $e^{iqx}$ (this complex number will disappear when you take the modulus squared). This fact was formally proved in 1928 by Felix Bloch to describe the wavefunction of electrons in a crystalline lattice,\footnote{His \href{https://link.springer.com/article/10.1007\%2FBF01339455}{original paper} is in German, but \href{https://en.wikipedia.org/wiki/Bloch_wave}{Wikipedia} also gives a good explanation and even presents a proof.} and \textbf{Bloch's theorem} allows us to write the wavefunction as
 \begin{tcolorbox}[title = Bloch wave equation] \vspace{-2ex}
 	\begin{equation}
 		\psi(x) = u(x)e^{iqx} \label{eq:bloch}
 	\end{equation}	
 \end{tcolorbox}
 
-where the function $u(x)$ is periodic in $d$, i.e. $u(x) = u(x+d)$. To verify that this is a valid solution for the wave function, we can check to see if it satisfies Equation~\ref{kp-period}.
+where the function $u(x)$ is periodic in $d$, i.e. $u(x) = u(x+d)$. To verify that this is a valid solution for the wavefunction, we can check to see if it satisfies Equation~\ref{kp-period}.
 \begin{align*}
 	\psi(x+d) &= u(x+d)e^{iq(x+d)} \\
 	\psi(x+d) &= u(x)e^{iqx}e^{iqd} \\
@@ -69,28 +69,28 @@ where the function $u(x)$ is periodic in $d$, i.e. $u(x) = u(x+d)$. To verify th
 	\abs{\psi(x+d)}^2 &= \abs{\psi(x)}^2
 \end{align*}
 
-which is what we desired. The steps above are the key to the whole problem. Instead of trying to solve for the wave functions for all $x$, we only need to solve the \Sch\ equation in one period (from $x=0$ to $x=d$, for example). Once we know the wave function there, we know it everywhere else by Bloch's theorem. What we claim is that the wave function for an electron in a periodic potential differs only from the wave function for a free particle by a periodic modulation, the function $u(x)$. This is quite remarkable! In the following sections we'll see how the variable $q$ really acts like a quantum number just as the integer $n$ did in the case of the particle in a box, where only certain ranges of $q$ will ultimately correspond to wave-like solutions.
+which is what we desired. The steps above are the key to the whole problem. Instead of trying to solve for the wavefunctions for all $x$, we only need to solve the \Sch\ equation in one period (from $x=0$ to $x=d$, for example). Once we know the wavefunction there, we know it everywhere else by Bloch's theorem. What we claim is that the wavefunction for an electron in a periodic potential differs only from the wavefunction for a free particle by a periodic modulation, the function $u(x)$. This is quite remarkable! In the following sections we'll see how the variable $q$ really acts like a quantum number just as the integer $n$ did in the case of the particle in a box, where only certain ranges of $q$ will ultimately correspond to wave-like solutions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Continuity condition}
-We will start by designating the region $x \in (-d,0)$ in Figure~\ref{fig:comb} as $L$ and the region $x \in (0,d)$ as $R$. Each of these regions has zero potential, so the electron behaves as a free particle in these regions. We can then say that for $x \in (0,d)$, the electron has wave function solutions of the form 
+We will start by designating the region $x \in (-d,0)$ in Figure~\ref{fig:comb} as $L$ and the region $x \in (0,d)$ as $R$. Each of these regions has zero potential, so the electron behaves as a free particle in these regions. We can then say that for $x \in (0,d)$, the electron has wavefunction solutions of the form 
 \begin{equation}
 	\psi_R(x) = A\sin(kx) + B\cos(kx) \label{eq:kpr}
 \end{equation}
 where $k = \sqrt{2mE/\hbar^2}$. \par 
 
-What about region $L$? In our derivation above, we observed in Equation~\ref{eq:bloch2} that the wave function in adjacent regions differed only by a phase factor. We can rearrange that equation to obtain
+What about region $L$? In our derivation above, we observed in Equation~\ref{eq:bloch2} that the wavefunction in adjacent regions differed only by a phase factor. We can rearrange that equation to obtain
 \begin{equation}
 	\psi(x) = e^{-iqd}\psi(x+d) \label{eq:bloch3}
 \end{equation}
 
-Aha! It might not be obvious at first, but Equation~\ref{eq:bloch3} allows us to express the wave function in region $L$ using the expression for the wave function in region $R$. Otherwise, we would have to use extra coefficients like $C$ and $D$ when writing down the wave function, which would complicate the math. Instead, we can say that for $x \in (-d,0)$, 
+Aha! It might not be obvious at first, but Equation~\ref{eq:bloch3} allows us to express the wavefunction in region $L$ using the expression for the wavefunction in region $R$. Otherwise, we would have to use extra coefficients like $C$ and $D$ when writing down the wavefunction, which would complicate the math. Instead, we can say that for $x \in (-d,0)$, 
 \begin{equation}
 	\psi_L(x) = e^{-iqd}\left[A\sin(k(x+d)) + B\cos(k(x+d))\right] \label{eq:kpl}
 \end{equation}
 
-We need one more step to finish setting up our calculations, and that is the behavior of the wave function at $x=0$ where the potential is discontinuous. We derived a continuity condition in the last chapter, but that was only under the assumption that the potential did not go to infinity, which is unfortunately not the case here. Instead, we will assume that the time-independent \Sch\ equation at the delta function takes the form 
+We need one more step to finish setting up our calculations, and that is the behavior of the wavefunction at $x=0$ where the potential is discontinuous. We derived a continuity condition in the last chapter, but that was only under the assumption that the potential did not go to infinity, which is unfortunately not the case here. Instead, we will assume that the time-independent \Sch\ equation at the delta function takes the form 
 \begin{equation*}
 	-\frac{\hbar^2}{2m} \psi''(x) + g\delta(x) \psi(x) = E\psi(x)
 \end{equation*}
@@ -109,12 +109,12 @@ Same as before, we will now integrate this equation over an infinitesimal region
 	\end{equation}
 \end{tcolorbox}
 
-We see there is now a \textbf{discontinuity} in the \emph{first derivative} of the wave function at $x=0$, which came as a result of integrating the delta function.\footnote{To do this, we applied the result $\int\delta(x-a)f(x) \dd{x} = f(a)$, which is known as the ``selection property'' of the delta function. Since $\delta(x-a)$ is only defined at $x=a$, it picks out the value of $f(a)$ (in this case, $\psi(0)$).} It is important to realize that the wave function itself is still continuous at the boundary just like it always was (again, probability argument works well here), even if its first derivative isn't. \par 
+We see there is now a \textbf{discontinuity} in the \emph{first derivative} of the wavefunction at $x=0$, which came as a result of integrating the delta function.\footnote{To do this, we applied the result $\int\delta(x-a)f(x) \dd{x} = f(a)$, which is known as the ``selection property'' of the delta function. Since $\delta(x-a)$ is only defined at $x=a$, it picks out the value of $f(a)$ (in this case, $\psi(0)$).} It is important to realize that the wavefunction itself is still continuous at the boundary just like it always was (again, probability argument works well here), even if its first derivative isn't. \par 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Forbidden energies}
-Now we have all the pieces assembled for the calculations, so it's time to roll up our sleeves and get to work. We will start by using the continuity conditions to get expressions for $A$ and $B$ from Equation~\ref{eq:kpr} and~\ref{eq:kpl}, and then proceed to derive an expression for $q$, which is what we ultimately want. At $x=0$, we have by the continuity of the wave function that
+Now we have all the pieces assembled for the calculations, so it's time to roll up our sleeves and get to work. We will start by using the continuity conditions to get expressions for $A$ and $B$ from Equation~\ref{eq:kpr} and~\ref{eq:kpl}, and then proceed to derive an expression for $q$, which is what we ultimately want. At $x=0$, we have by the continuity of the wavefunction that
 \begin{align*}
 	\psi_R(0) &= \psi_L(0) \\
 	A\sin(0) + B\cos(0) &= e^{-iqd}\left[A\sin(kd) + B\cos(kd)\right] \\
@@ -146,7 +146,7 @@ You have probably learned in your math classes that one way to solve linear syst
 	A \\ B
 	\end{bmatrix} &= 0 \numberthis \label{eq:kpmat}
 \end{align*}
-where we have a complicated coefficient matrix $Q$ multiplying our variables matrix. We can see right away that a trivial solution to this equation is $A=B=0$, which can't be the correct solution because it would lead to a degenerate wave function. Instead, we note that allowable solutions (of which there are infinitely many) to Equation~\ref{eq:kpmat} are obtained when the determinant of $Q$ is zero.\footnote{This is discussed briefly on \href{https://en.wikipedia.org/wiki/System\_of\_linear\_equations\#Solution\_set\_2}{Wikipedia}.} Calculating the determinant\footnote{For a $2\times2$ matrix $Q=\begin{pmatrix} a & b \\ c & d	\end{pmatrix}$, the determinant is given by $\det(Q)=ad-bc$.} and setting it equal to zero gives us an equation for $q$ that we can then solve. Proceeding, we find
+where we have a complicated coefficient matrix $Q$ multiplying our variables matrix. We can see right away that a trivial solution to this equation is $A=B=0$, which can't be the correct solution because it would lead to a degenerate wavefunction. Instead, we note that allowable solutions (of which there are infinitely many) to Equation~\ref{eq:kpmat} are obtained when the determinant of $Q$ is zero.\footnote{This is discussed briefly on \href{https://en.wikipedia.org/wiki/System\_of\_linear\_equations\#Solution\_set\_2}{Wikipedia}.} Calculating the determinant\footnote{For a $2\times2$ matrix $Q=\begin{pmatrix} a & b \\ c & d	\end{pmatrix}$, the determinant is given by $\det(Q)=ad-bc$.} and setting it equal to zero gives us an equation for $q$ that we can then solve. Proceeding, we find
 \begin{align*}
 	\det(Q) &= 0 \\
 	e^{-iqd}\sin(kd) \left( e^{-iqd}k\sin(kd) - \frac{2mg}{\hbar^2} \right) &= \left( e^{-iqd}\cos(kd) - 1 \right) \left( k\left(1 - e^{-iqd}\cos(kd)\right) \right) \\
@@ -212,7 +212,7 @@ We can do the same with the other three points, and we consolidate the results i
 	\label{tab:qvk}
 \end{table}
 
-Note that at point $A$, $q=0$ corresponds to a non-zero value of $k$ and hence a non-zero value for the energy, which we have previously discussed. Also, even though $q=\pi/d$ at both $C$ and $D$, those points are at different energy levels. This means if we construct a plot of $E$ vs. $q$, as we have done in Figure~\ref{fig:Evq}, we will see a jump discontinuity at $q=\pi/d$---and thus the band gap emerges! This pattern continues at every multiple of $\pi/d$, and the width of each successive energy band increases while the gap in between them slowly decreases. Instead of having discrete energy levels like in the particle in a box model, here the energies have spread out into wider bands due to quantum interactions between neighboring wave functions across the potential barrier.
+Note that at point $A$, $q=0$ corresponds to a non-zero value of $k$ and hence a non-zero value for the energy, which we have previously discussed. Also, even though $q=\pi/d$ at both $C$ and $D$, those points are at different energy levels. This means if we construct a plot of $E$ vs. $q$, as we have done in Figure~\ref{fig:Evq}, we will see a jump discontinuity at $q=\pi/d$---and thus the band gap emerges! This pattern continues at every multiple of $\pi/d$, and the width of each successive energy band increases while the gap in between them slowly decreases. Instead of having discrete energy levels like in the particle in a box model, here the energies have spread out into wider bands due to quantum interactions between neighboring wavefunctions across the potential barrier.
 
 \begin{figure}[!h]
 	\centering
@@ -239,7 +239,7 @@ Typically, the two energy bands in a metal overlap, which give metals good condu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
-To recap, this chapter exposed us to the idea of a periodic potential modeled as a series of delta functions in the Kronig-Penney model. We applied Bloch's theorem to describe the periodicity in an electron's wave function and derive a new continuity condition across the potential barriers. This allowed us to derive an equation for the relationship between the phase shift wave number $q$ and the electron's energy $E$. We discovered that the result was a good model for the band structure of a material, and that there were certain regions of energy that were forbidden for the electron, thus demonstrating the existence of a material's band gap. The Kronig-Penney model's simplistic nature and uncanny ability to elucidate the band gap make it a powerful model for periodic quantum mechanical systems. \par 
+To recap, this chapter exposed us to the idea of a periodic potential modeled as a series of delta functions in the Kronig-Penney model. We applied Bloch's theorem to describe the periodicity in an electron's wavefunction and derive a new continuity condition across the potential barriers. This allowed us to derive an equation for the relationship between the phase shift wave number $q$ and the electron's energy $E$. We discovered that the result was a good model for the band structure of a material, and that there were certain regions of energy that were forbidden for the electron, thus demonstrating the existence of a material's band gap. The Kronig-Penney model's simplistic nature and uncanny ability to elucidate the band gap make it a powerful model for periodic quantum mechanical systems. \par 
 
 So far, all of the potentials we've encountered have been rectangular, although this need not be the case. Coming up next, we will explore the behavior of particles in a parabolic potential, which describes simple harmonic motion in a quantum mechanical system. Get ready to work with some of the nifty mathematical tools contained within quantum theory!
 

@@ -62,9 +62,9 @@ Note that if $E > V_0$, then $k_2$ is real and we have sinusoidal behavior in re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Forward and backward waves}
-Now, the general solutions given by Equation~\ref{eq:reg-1-wf} and~\ref{eq:reg-2-wf} are perfectly acceptable mathematically, but we argued in class that there is also a useful physical interpretation of these solutions. Recall that the de Broglie relation relates the wave vector $k$ to the momentum. Now we see that these wave function solutions not only resemble the plane wave solutions that we started with, but they also have a superposition of positive and negative wave vectors which determine the direction of propagation of the wave. We therefore argue that we can associate $A$ with the amplitude of the \textbf{incident wave} on the step (since the exponent has a positive $k_1$) and $B$ with the amplitude of the \textbf{reflected wave} (arising from a reflection at the interface). Similarly, we will associate $C$ with the amplitude of the \textbf{transmitted wave} through the step and $D$ with the amplitude of the wave incident on the step from the right. \par 
+Now, the general solutions given by Equation~\ref{eq:reg-1-wf} and~\ref{eq:reg-2-wf} are perfectly acceptable mathematically, but we argued in class that there is also a useful physical interpretation of these solutions. Recall that the de Broglie relation relates the wave vector $k$ to the momentum. Now we see that these wavefunction solutions not only resemble the plane wave solutions that we started with, but they also have a superposition of positive and negative wave vectors which determine the direction of propagation of the wave. We therefore argue that we can associate $A$ with the amplitude of the \textbf{incident wave} on the step (since the exponent has a positive $k_1$) and $B$ with the amplitude of the \textbf{reflected wave} (arising from a reflection at the interface). Similarly, we will associate $C$ with the amplitude of the \textbf{transmitted wave} through the step and $D$ with the amplitude of the wave incident on the step from the right. \par 
 
-In the example shown in Figure~\ref{fig:tunnel-step}, because we are only considering a wave incident on the step from the left, the coefficient $D$ must be zero. For the case when $E > V_0$, we still have a complex exponential function, so the wave function hasn't changed much. But for the case when $E < V_0$, the wave function in region II is only an exponentially damped function, which as we discussed in class is analogous to an evanescent wave in wave optics.\footnote{Indeed, evanescent wave coupling causes \href{https://en.wikipedia.org/wiki/Total_internal_reflection\#Frustrated_total_internal_reflection}{``frustrated'' total internal reflection}, which is a very similar behavior to quantum tunneling.} To see why this is the case, we can define a constant
+In the example shown in Figure~\ref{fig:tunnel-step}, because we are only considering a wave incident on the step from the left, the coefficient $D$ must be zero. For the case when $E > V_0$, we still have a complex exponential function, so the wavefunction hasn't changed much. But for the case when $E < V_0$, the wavefunction in region II is only an exponentially damped function, which as we discussed in class is analogous to an evanescent wave in wave optics.\footnote{Indeed, evanescent wave coupling causes \href{https://en.wikipedia.org/wiki/Total_internal_reflection\#Frustrated_total_internal_reflection}{``frustrated'' total internal reflection}, which is a very similar behavior to quantum tunneling.} To see why this is the case, we can define a constant
 \begin{equation}
 	k' = \sqrt{\frac{2m(V_0-E)}{\hbar^2}} \label{eq:reg-2-kp}
 \end{equation}
@@ -83,12 +83,12 @@ and the exponential decay function emerges. Our goal now is to extract the refle
 	\boxed{R = \abs{\frac{B}{A}}^2 \quad \text{and} \quad T = \frac{k_2}{k_1}\abs{\frac{C}{A}}^2}
 \end{equation*}
 % TODO: check with Aaron about this
-Similar to the statistical interpretation of the wave function, we have taken the modulus squared to represent the probability of an event occurring. \par 
+Similar to the statistical interpretation of the wavefunction, we have taken the modulus squared to represent the probability of an event occurring. \par 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Continuity condition}
-In order to relate the coefficients from the wave function in region I with those from the wave function in region II, we have to be precise and specify the behavior at the boundary of the two regions (i.e. at $x=0$). Let us consider what the conditions are for continuity of the wave function and its first derivative in a region where the potential is discontinuous (as it is at $x=0$). Starting from the time-independent \Sch\ equation, we integrate over an infinitesimal region $(-\epsilon, \epsilon)$ about $x=0$:
+In order to relate the coefficients from the wavefunction in region I with those from the wavefunction in region II, we have to be precise and specify the behavior at the boundary of the two regions (i.e. at $x=0$). Let us consider what the conditions are for continuity of the wavefunction and its first derivative in a region where the potential is discontinuous (as it is at $x=0$). Starting from the time-independent \Sch\ equation, we integrate over an infinitesimal region $(-\epsilon, \epsilon)$ about $x=0$:
 \begin{align*}
 	-\frac{\hbar^2}{2m} \dv[2]{\Psi}{x} + V(x)\Psi &= E\Psi \\
 	\dv[2]{\Psi}{x} &= \frac{2m}{\hbar^2}(V(x) - E)\Psi \\
@@ -96,13 +96,13 @@ In order to relate the coefficients from the wave function in region I with thos
 \end{align*}
 
 Now as $\epsilon$ approaches zero, the right hand side approaches zero if $V(x)$ and $\Psi(x)$ are not infinite (and there are good reasons why $\Psi$, from which one calculates the probability density function, cannot go to infinity).\footnote{Though $\Psi(x)$ cannot be infinite at the boundary, $V(x)$ still can. We'll save this for the next chapter when we discuss the Kronig-Penney model.} We therefore conclude, after performing the straightforward integral on the left hand side, that
-\begin{tcolorbox}[title = Continuity of the wave function] \vspace{-2ex}
+\begin{tcolorbox}[title = Continuity of the wavefunction] \vspace{-2ex}
 	\begin{equation}
 		\dv{\Psi}{x} \bigg|_{\epsilon} - \dv{\Psi}{x} \bigg|_{-\epsilon} = 0 \label{eq:cont-dx}
 	\end{equation}
 \end{tcolorbox}
 
-This means that across the discontinuity in the potential, the first derivative of the wave function (and by extension the wave function itself) must be continuous.\footnote{Continuity of the wave function is an important point, so if you need another explanation to internalize the ideas, \href{https://www.quora.com/Why-does-the-wave-function-have-to-be-continuous}{Quora} actually gives a pretty good answer.} 
+This means that across the discontinuity in the potential, the first derivative of the wavefunction (and by extension the wavefunction itself) must be continuous.\footnote{Continuity of the wavefunction is an important point, so if you need another explanation to internalize the ideas, \href{https://www.quora.com/Why-does-the-wave-function-have-to-be-continuous}{Quora} actually gives a pretty good answer.} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -187,16 +187,16 @@ The above equation is a very useful approximate solution for the tunneling proba
 	\end{equation}
 \end{tcolorbox}
 
-The exact solution has a maximum value of 1 when $k'L=0$ and rapidly decreases to 0 as $k'L$ increases. However, $T$ is still non-zero, which means there is a chance for the particle to tunnel through the barrier and emerge on the other side! This is shown schematically in Figure~\ref{fig:tunnel-wave}.\footnote{What we've plotted is the actual wave function amplitude. How would the probability density differ?} As discussed in class, for $L \approx \SI{1}{\nano\meter}$ and for typical electron-volt-scale potential barriers, the transmission probability is close to 1, indicating how important these kinds of effects become at the nanoscale. \par
+The exact solution has a maximum value of 1 when $k'L=0$ and rapidly decreases to 0 as $k'L$ increases. However, $T$ is still non-zero, which means there is a chance for the particle to tunnel through the barrier and emerge on the other side! This is shown schematically in Figure~\ref{fig:tunnel-wave}.\footnote{What we've plotted is the actual wavefunction amplitude. How would the probability density differ?} As discussed in class, for $L \approx \SI{1}{\nano\meter}$ and for typical electron-volt-scale potential barriers, the transmission probability is close to 1, indicating how important these kinds of effects become at the nanoscale. \par
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.48\linewidth]{tunnel-wave}
-	\caption{An illustration of the amplitude of the wave function in the three regions. It exponentially decays through the barrier but emerges from the right side with a lower amplitude and the same frequency (energy) as the wave function in the left region. A non-zero value of the wave function on the right indicates that the particle may exist past the barrier.}
+	\caption{An illustration of the amplitude of the wavefunction in the three regions. It exponentially decays through the barrier but emerges from the right side with a lower amplitude and the same frequency (energy) as the wavefunction in the left region. A non-zero value of the wavefunction on the right indicates that the particle may exist past the barrier.}
 	\label{fig:tunnel-wave}
 \end{figure}
 
-Furthermore, note how the wave function in region III differs from the wave function in region I. The amplitude is much smaller, which makes sense as there is a much lower probability that we will find the particle on the right side of the barrier. However, should tunneling occur, we can apply the conservation of energy to see that the particle has the same energy as before, and hence the frequency of the wave function is the same. It's easy to get probability and energy mixed up, but make sure you can draw the distinction.\footnote{An analogy to classical mechanics: A ball with a certain amount of kinetic energy that rolls up and over a hill will have the same amount of kinetic energy when it arrives back to ground level (assuming no friction).} \par 
+Furthermore, note how the wavefunction in region III differs from the wavefunction in region I. The amplitude is much smaller, which makes sense as there is a much lower probability that we will find the particle on the right side of the barrier. However, should tunneling occur, we can apply the conservation of energy to see that the particle has the same energy as before, and hence the frequency of the wavefunction is the same. It's easy to get probability and energy mixed up, but make sure you can draw the distinction.\footnote{An analogy to classical mechanics: A ball with a certain amount of kinetic energy that rolls up and over a hill will have the same amount of kinetic energy when it arrives back to ground level (assuming no friction).} \par 
 
 Though we did not derive it here, it is interesting to look at the transmission probability for the case when $E > V_0$, which is given by Equation~\ref{eq:tunnel-prob-res} and plotted in Figure~\ref{fig:tunnel-prob} as a function of energy.
 \begin{equation}
@@ -206,11 +206,11 @@ Though we did not derive it here, it is interesting to look at the transmission 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.35\linewidth]{tunnel-prob}
-	\caption{Tunneling probability as a function of energy for the finite potential barrier when $E > V_0$. At characteristic energies, the tunneling probability reaches 1 due to resonance of the wave function in the region of the barrier.}
+	\caption{Tunneling probability as a function of energy for the finite potential barrier when $E > V_0$. At characteristic energies, the tunneling probability reaches 1 due to resonance of the wavefunction in the region of the barrier.}
 	\label{fig:tunnel-prob}
 \end{figure}
 
-In this case, the wave function displays sinusoidal behavior in region II instead of exponential behavior, and we have made the appropriate substitution as $k_2=ik'$. It may come as no surprise that if the energy of the particle was high enough, then the transmission probability approaches 1 (i.e. it's as if the barrier wasn't even there). However, as seen in Figure~\ref{fig:tunnel-prob}, total transmission is also achievable at lower values of $E$, which correspond to tunneling \textbf{resonance} when the wavelength of the particle coincides with the width of the barrier. This leads to a constructive interference effect analogous to what we observed in the double-slit experiment.
+In this case, the wavefunction displays sinusoidal behavior in region II instead of exponential behavior, and we have made the appropriate substitution as $k_2=ik'$. It may come as no surprise that if the energy of the particle was high enough, then the transmission probability approaches 1 (i.e. it's as if the barrier wasn't even there). However, as seen in Figure~\ref{fig:tunnel-prob}, total transmission is also achievable at lower values of $E$, which correspond to tunneling \textbf{resonance} when the wavelength of the particle coincides with the width of the barrier. This leads to a constructive interference effect analogous to what we observed in the double-slit experiment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -257,7 +257,7 @@ In order to detect small changes on a material's surface, the STM leverages \tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
-To recap, in this chapter we analyzed the peculiar phenomenon of quantum tunneling, whereby a particle incident on a finite potential barrier has a non-zero probability of penetrating the barrier and emerging on the other side. This holds true even if the particle carried less energy than the barrier's potential, which is prohibited by the laws of classical mechanics. In that case, we argued that the wave function of the particle exhibits exponential behavior inside the barrier and it must maintain continuity with the wave function on the outside. This allowed us to derive the transmission probability as a function of the particle's wave vector and the barrier width, and we typically use Equation~\ref{eq:tunnel-approx} to approximate this probability. Tunneling is a vital mechanism for many natural processes and scientists have leveraged its power to create novel nanoscale devices like the quantum cascade laser and scanning tunneling microscope. In the next chapter, we will solve the \Sch\ equation for yet another model, one that consists of periodic potential barriers that are infinitely tall and infinitely narrow.
+To recap, in this chapter we analyzed the peculiar phenomenon of quantum tunneling, whereby a particle incident on a finite potential barrier has a non-zero probability of penetrating the barrier and emerging on the other side. This holds true even if the particle carried less energy than the barrier's potential, which is prohibited by the laws of classical mechanics. In that case, we argued that the wavefunction of the particle exhibits exponential behavior inside the barrier and it must maintain continuity with the wavefunction on the outside. This allowed us to derive the transmission probability as a function of the particle's wave vector and the barrier width, and we typically use Equation~\ref{eq:tunnel-approx} to approximate this probability. Tunneling is a vital mechanism for many natural processes and scientists have leveraged its power to create novel nanoscale devices like the quantum cascade laser and scanning tunneling microscope. In the next chapter, we will solve the \Sch\ equation for yet another model, one that consists of periodic potential barriers that are infinitely tall and infinitely narrow.
 
 
 %} % for doublespacing

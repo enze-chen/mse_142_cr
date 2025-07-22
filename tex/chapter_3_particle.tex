@@ -1,85 +1,154 @@
 % Created: Enze Chen, June 2017
-% Last edited: Enze Chen, December 2017
-%
-% Chapter 3 of the MSE 142 coursereader. This chapter discusses the particle in a box model as a concrete application of the time-independent Schrodinger equation. Quantization, normalization, and the uncertainty principle are discussed. This model is a good approximation for quantum dots, our first physical example of a quantum mechanical system.
+
+% Chapter 3 of the MSE 142 coursereader. 
+% This chapter discusses the particle in a box model as a concrete application of the time-independent Schrodinger equation. 
+% Quantization, normalization, and the uncertainty principle are discussed. 
+% This model is a good approximation for quantum dots, our first physical example of a quantum mechanical system.
 
 % Uncomment the following three lines and last line to individually compile this chapter
 %\documentclass[12pt, english]{book}
 %\usepackage{142crstyle}
 %\begin{document}
 
-\chapter{Particle In A Box} \label{ch:box}
+\chapter{Particle in a Box} \label{ch:box}
 %{ \doublespacing 
-In the previous chapter, we derived the \Sch\ equation, which provides the theoretical underpinning for all quantum mechanical calculations. Now we will apply the \Sch\ equation to a simple example and solve for the wave function $\Psi$. This will give us a better understanding of the mathematical constructs we saw previously and how they can be applied to a physical system like quantum dots.
 
+In the previous chapter, we derived the \Sch\ equation, which provides the theoretical underpinning for all quantum mechanical calculations. 
+Now we will apply the \Sch\ equation to a simple example and solve for the wavefunction $\Psi(x,t)$. 
+This will give us a better understanding of the mathematical constructs we saw previously and how they can be applied to a physical system like quantum dots.
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\section{Before you begin}
+
+This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
+We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
+
+\begin{itemize}
+	\item foo
+\end{itemize}
+
+\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
+	We strongly recommend everyone to take \href{TODO}{the autograded quiz} for this chapter.
+	It is anonymous and doesn't affect your grade, but it will give you some feedback and get you mentally situated for what's about to come.
+\end{tcolorbox}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Formulation}
-As its name would imply, the \textbf{particle in a box} model is just that: we have a small particle (e.g. an electron) that is free to move in one dimension in a small space confined between $x=0$ and $x=L$ (Figure~\ref{fig:box}). In order to keep the particle confined, we imagine the potential $V$ to be $\infty$ outside of the walls and 0 on the inside. For this reason, this model is also known as the \textbf{infinite potential well}. Physically, you can think of this as a guitar string of length $L$ with the two ends fixed in place so that it cannot vibrate at the ends.
+
+As its name would imply, the \textbf{particle in a box} model is just that: we have a small particle (e.g., an electron) that is free to move (in one dimension) in a small space confined between $x = 0$ and $x = L$ (\autoref{fig:box}). 
+In order to keep the particle confined, we imagine the potential $V$ to be $\infty$ outside of the walls and 0 on the inside. 
+For this reason, this model is also known as the \textbf{infinite potential well}.\footnote{FYI: what is the ``box."}
+Physically, you can think of this as a guitar string of length $L$ with the two ends fixed in place so that it cannot vibrate at the ends.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.45\linewidth]{particle-in-a-box}
-	\caption{Particle in a box model. The potential $V(x)$ is zero for $x\in[0,L]$ and infinite everywhere else, which confines the movement of the particle to be inside the walls at all times.}
+	\caption{Particle in a box model. 
+		The potential $V(x)$ is zero for $x \in [0,L]$ and infinite everywhere else, which confines the movement of the particle to be inside the walls at all times.}
 	\label{fig:box}
 \end{figure}
 
-The particle in a box model is a great starting point for us because it is simple enough to be solved analytically to illustrate all sorts of amazing quantum behavior. We first enforce the condition that the wave function $\Psi(x,t)$ must be zero at $x=0$ and $x=L$ for all time $t$. This means the probability of finding the particle there is zero, which makes sense given the infinite potential barriers. \par 
+The particle in a box model is a great starting point for us because it is simple enough to be solved analytically to illustrate all sorts of amazing quantum behavior. 
+We first enforce the condition that the wavefunction $\Psi(x,t)$ must be zero at $x = 0$ and $x = L$ for all time $t$. 
+This means the probability of finding the particle there is zero, which makes sense given the infinite potential barriers.
 
-Inside the box, where $V(x) = 0$, the time-independent \Sch\ equation (Equation~\ref{eq:tise}) now adopts the simplified form
+Inside the box, where $V(x) = 0$, the time-independent \Sch\ equation (\autoref{eq:tise}) now adopts a simplified form:
+
 \begin{tcolorbox}[title=\Sch\ equation for particle in a box] \vspace{-2ex}
 	\begin{equation}
 		-\frac{\hbar^2}{2m} \dv[2]{\psi_n}{x} = E_n\psi_n  \label{eq:box-se}
 	\end{equation}
 \end{tcolorbox}
-where we have again explicitly put the index $n$ to label different solutions for different quantum states. Now we are looking for a function with which two derivatives will give us back the original function times a negative constant. Equation~\ref{eq:box-se} is actually the equation for a simple harmonic oscillator from classical mechanics, which you might recall has sines and cosines as solutions.\footnote{Alternatively, employ the method of educated guessing as we showed in class to arrive at this result.} In fact, the general solution is given by 
+
+\noindent where we have again explicitly put the index $n$ to label different solutions for different quantum states. 
+Now we are looking for a function with which two derivatives will give us back the original function times a negative constant. 
+\autoref{eq:box-se} is actually the equation for a simple harmonic oscillator from classical mechanics, which you might recall has sines and cosines as solutions.\footnote{Alternatively, employ the method of educated guessing as we showed in class to arrive at this result.} 
+In fact, the general solution is given by 
+
 \begin{tcolorbox}[title=General solution to particle in a box] \vspace{-2ex}
 	\begin{equation}
 		\psi_n(x) = A\sin(k_nx) + B\cos(k_nx) \label{box-gensol}
 	\end{equation}
 \end{tcolorbox}
-where $k_n = \sqrt{2mE_n/\hbar^2}$ and $A$ and $B$ are arbitrary constants. We definitely took a big jump going directly from Equation~\ref{eq:box-se} to~\ref{box-gensol}, so if you're not quite convinced, I recommend plugging the latter equation into the former to make sure that it is indeed a valid solution.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent where $k_n = \sqrt{2mE_n/\hbar^2}$ and $A$ and $B$ are arbitrary constants. 
+We definitely took a big jump going directly from \autoref{eq:box-se} to \autoref{box-gensol}, so if you're not quite convinced, I recommend plugging the latter equation into the former to make sure that it is indeed a valid solution.
 
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Quantization}
-With the general solution on hand, we now look to see if the constraints in the problem can help us simplify some of the constants. Typically, the constants that appear in solutions to differential equations are fixed by the \textbf{boundary conditions} of the problem. We already noted earlier that
+
+With the general solution on hand, we now look to see if the constraints in the problem can help us simplify some of the constants. 
+Typically, the constants that appear in solutions to differential equations are fixed by the \textbf{boundary conditions} of the problem. 
+We already noted earlier that
+
 \begin{align}
 	\psi(0) &= 0 \\
 	\psi(L) &= 0
 \end{align}
-which seem appropriate for this model. From the first boundary condition, we have
+
+\noindent which seem appropriate for this model. 
+From the first boundary condition, we have
+
 \begin{equation*}
 	\psi(0) = A\sin(k_n \cdot 0) + B\cos(k_n \cdot 0) = B = 0
 \end{equation*}
-which means the cosine term is eliminated! From the second boundary condition, we have
+
+\noindent which means the cosine term is eliminated! 
+From the second boundary condition, we have
+
 \begin{equation*}
 	\psi(L) = A\sin(k_nL) = 0
 \end{equation*}
 
-This scenario is slightly trickier, but realize that we cannot have $A=0$ and still have a physically meaningful solution, so we must have $\sin(k_nL) = 0$. Since the sine function has roots at integer multiples of $\pi$, this means that
+This scenario is slightly trickier, but realize that we cannot have $A = 0$ and still have a physically meaningful solution, so we must have $\sin(k_nL) = 0$. 
+Since the sine function has roots at integer multiples of $\pi$, this means that
+
 \begin{equation}
 	k_nL = 0,\ \pm\pi,\ \pm2\pi,\ \pm3\pi,\ \dots \label{eq:k-pi-box}
 \end{equation}
 
-Analyzing Equation~\ref{eq:k-pi-box} closely, we can argue that $k=0$ would also lead to a trivial solution and we can eliminate the negative solutions due to symmetry, given that $\sin(-k_nL) = -\sin(k_nL)$ would give us the same wave function up to a sign. Therefore, it must be the case that 
+Analyzing \autoref{eq:k-pi-box} closely, we can argue that $k = 0$ would also lead to a trivial solution and we can eliminate the negative solutions due to symmetry.\footnote{Given that $\sin(-k_nL) = -\sin(k_nL)$, we would obtain the same wavefunction up to a sign.} 
+Therefore, it must be the case that 
+
 \begin{tcolorbox}[title=Allowed values of $k$] \vspace{-2ex}
 	\begin{equation}
 		k_n = \frac{n\pi}{L}, \quad n = 1, 2, 3, \dots   \label{eq:k-box}
 	\end{equation}
 \end{tcolorbox}
 
-Now you see why we chose to index the solutions with the subscript $n$ all along. Furthermore, because $k_n = \sqrt{2mE_n/\hbar^2}$, we can use some algebra and find that 
+Now you see why we chose to index the solutions with the subscript $n$ all along. 
+Furthermore, because $k_n = \sqrt{2mE_n/\hbar^2}$, we can use some algebra and find that
+
 \begin{tcolorbox}[title = Allowed energies] \vspace{-2ex}
 	\begin{equation}
 		E_n = \frac{\hbar^2n^2\pi^2}{2mL^2} \label{eq:E-box}
 	\end{equation}
 \end{tcolorbox}
 
-The results from these two expressions show that the energy states of a particle in an infinite potential well are not a continuum of values but rather a set of discrete energy levels. Thus we say that the energies for a particle in a box are \textbf{quantized}, where each state is indexed by the \textbf{quantum number} $n$. We see then that $n=1$ corresponds to the lowest energy state, called the \textbf{ground state} of the system, and higher energy states are called \textbf{excited states} (analogous to harmonics in music). Note how strange this is: Whereas classically, a particle can have zero total energy, here we are saying that is not the case, even for the ground state!\footnote{We will elaborate on this further in Chapter~\ref{ch:qho} when we discuss the zero-point energy of the quantum harmonic oscillator.} 
+The results from these two expressions show that the energy states of a particle in an infinite potential well are not a continuum of values but rather a set of discrete energy levels. 
+Thus we say that the energies for a particle in a box are \textbf{quantized}, where each state is indexed by the \textbf{quantum number} $n$. 
+We see then that $n = 1$ corresponds to the lowest energy state, called the \textbf{ground state} of the system, and higher energy states are called \textbf{excited states} (analogous to harmonics in music). 
+Note how strange this is: Whereas classically, a particle can have zero total energy, here we are saying that is not the case, even for the ground state!\footnote{We will elaborate on this further in \autoref{ch:qho} when we discuss the zero-point energy of the quantum harmonic oscillator.} 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Normalization}
-Now that we have an expression for $k_n$ and cleverly eliminated $B$, all that's left is to find the leading coefficient $A$. Recall how in Section~\ref{sec:normse} we used the normalization condition to help us with this task, so let's apply that again here. Specifically, we have
+
+Now that we have an expression for $k_n$ and cleverly eliminated $B$, all that's left is to find the leading coefficient $A$. 
+Recall how in \autoref{sec:normse} we used the normalization condition to help us with this task, so let's apply that again here. 
+Specifically, we have
+
 \begin{align*}
 	\int_0^L \abs{A}^2 \sin^2(k_nx)\dd{x} &= 1 \\
 	\abs{A}^2 \int_0^L \sin^2\left(\frac{n\pi x}{L}\right)\dd{x} &= 1 \\ 
@@ -88,14 +157,20 @@ Now that we have an expression for $k_n$ and cleverly eliminated $B$, all that's
 	\abs{A}^2 \left(\frac{L}{2}\right) &= 1 \\
 	\abs{A}^2 &= \frac{2}{L}
 \end{align*}
-where we have used the trigonometric identity $\sin^2(x) = \frac{1}{2}\left(1 - \cos(2x)\right)$ going from the second line to the third line. We take the positive real root to get $A = \sqrt{2/L}$. Inside the confines of the box, we have the stationary state solutions given by 
+
+\noindent where we have used the trigonometric identity $\sin^2(x) = \frac{1}{2} \left( 1 - \cos(2x) \right)$ going from the second line to the third line. 
+We take the positive real root to get $A = \sqrt{2/L}$. 
+Inside the confines of the box, we have the stationary state solutions given by:
+
 \begin{tcolorbox}[title=Stationary state solutions] \vspace{-2ex}
 	\begin{equation}
 		\psi_n(x) = \sqrt{\frac{2}{L}} \sin \left(\frac{n\pi x}{L}\right) \label{eq:box-ss}
 	\end{equation}
 \end{tcolorbox}
 
-The first three stationary states are plotted in Figure~\ref{fig:ss-box}, and they look similar to the standing waves we observe when we pluck a guitar string.\footnote{In fact, the superposition of the various harmonics in musical instruments is what gives each instrument its unique timbre, or tone quality.} We will call zero-crossings on the wave function \textbf{nodes}, which means the $n$th quantum state has $n-1$ nodes (alternatively, the $n$th \emph{excited} state has $n$ nodes). These nodes restrict the location where the particle may be found and contribute to the symmetry of the wave functions.
+The first three stationary states are plotted in \autoref{fig:ss-box}, and they look similar to the standing waves we observe when we pluck a guitar string.\footnote{In fact, the superposition of the various harmonics in musical instruments is what gives each instrument its unique timbre, or tone quality.} 
+We will call zero-crossings on the wavefunction \textbf{nodes}, which means the $n^{\text{th}}$ quantum state has $n - 1$ nodes (alternatively, the $n^{\text{th}}$ \emph{excited state} has $n$ nodes). 
+These nodes restrict the location where the particle may be found and contribute to the symmetry of the wavefunctions.
 
 \begin{figure}[!h]
 	\centering
@@ -106,10 +181,13 @@ The first three stationary states are plotted in Figure~\ref{fig:ss-box}, and th
 	\label{fig:ss-box}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Orthogonality}
-Another interesting property of the wave functions given by Equation~\ref{eq:box-ss} is that they are all mutually orthogonal. This means 
+
+Another interesting property of the wavefunctions given by Equation~\ref{eq:box-ss} is that they are all mutually orthogonal. This means 
 \begin{equation*}
 	\int \psi_m^*(x) \psi_n(x) \dd{x} = 0, \quad \forall m \neq n
 \end{equation*}
@@ -135,7 +213,7 @@ where $\delta_{mn}$ is known as the \textbf{Kronecker delta} function. Now we ha
 	\Psi(x,t) = \sum_{n=1}^{\infty} A_n \sin \left(\frac{n\pi x}{L}\right) e^{-iE_nt/\hbar} \label{eq:tdwf-box}
 \end{equation}
 
-This equation gets us very close to the general solution, but we still have $A_n$ to solve for---and that's where the following ``mathematical trick'' comes in. We noted in Section~\ref{sec:normse} how $A_n$ is time-invariant, so let's look at our wave function at time $t=0$. From Equation~\ref{eq:tdwf-box}, we obtain
+This equation gets us very close to the general solution, but we still have $A_n$ to solve for---and that's where the following ``mathematical trick'' comes in. We noted in Section~\ref{sec:normse} how $A_n$ is time-invariant, so let's look at our wavefunction at time $t=0$. From Equation~\ref{eq:tdwf-box}, we obtain
 \begin{equation*}
 	\Psi(x,0) = \sum_{n=1}^{\infty} A_n \sin \left(\frac{n\pi x}{L} \right)
 \end{equation*}
@@ -148,7 +226,7 @@ where the exponential term has dropped out. Now for the ``trick'': It would appe
 \end{align*}
 
 The right hand side is 0 for all values of $n$ except when $n=j$. Thus the summation is eliminated and we can move $\frac{L}{2}$ to the other side (and change $j$ to $n$) to obtain
-\begin{tcolorbox}[title = Wave function expansion coefficients] \vspace{-2ex}
+\begin{tcolorbox}[title = Wavefunction expansion coefficients] \vspace{-2ex}
 	\begin{equation}
 		A_n = \frac{2}{L} \int_0^L \Psi(x,0) \sin \left(\frac{n\pi x}{L}\right) \dd{x} \label{eq:wf-coeff}
 	\end{equation}
@@ -159,12 +237,12 @@ Whew! After some nifty math, we were finally able to derive a general solution t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Uncertainty principle}
-Let's try to calculate the amplitude coefficients using Equation~\ref{eq:wf-coeff} for a simple case and arrive at another fundamental principle in quantum mechanics. First, we assume that our wave function has the initial profile shown in Figure~\ref{fig:square-box}. That is, it is a square wave of height $A$ and width $b$ centered in the middle of the infinite potential well.
+Let's try to calculate the amplitude coefficients using Equation~\ref{eq:wf-coeff} for a simple case and arrive at another fundamental principle in quantum mechanics. First, we assume that our wavefunction has the initial profile shown in Figure~\ref{fig:square-box}. That is, it is a square wave of height $A$ and width $b$ centered in the middle of the infinite potential well.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.26\linewidth]{square-box}
-	\caption{Initial wave function profile of height $A$ and width $b$ centered in the middle of the well.}
+	\caption{Initial wavefunction profile of height $A$ and width $b$ centered in the middle of the well.}
 	\label{fig:square-box}
 \end{figure}
 
@@ -197,7 +275,7 @@ We observe in Figure~\ref{fig:sinx/x} that the majority of the function (which w
 
 We will call the value $\Delta k$ the \textbf{uncertainty} in $k$, which we know by the de Broglie relation is related to momentum by $k=p/\hbar$. Notice that Equation~\ref{eq:delta-k} also gives us an inverse relationship between $b$ and $\Delta k$; specifically, as $b \rightarrow 0$, $\Delta k \rightarrow \infty$, and vice versa. \par 
 
-Now, what is $b$? Recall that it was the width of our initial wave function profile. When we vary $b$, what we're really doing is varying the width of our wave function, which we can effectively call $\Delta x$. We can combine these facts with the de Broglie relation (Equation~\ref{dBw}) to obtain
+Now, what is $b$? Recall that it was the width of our initial wavefunction profile. When we vary $b$, what we're really doing is varying the width of our wavefunction, which we can effectively call $\Delta x$. We can combine these facts with the de Broglie relation (Equation~\ref{dBw}) to obtain
 \begin{equation}
 	p = \hbar k \implies \Delta p = \hbar \Delta k \ge  \frac{\hbar 2\pi}{b} = \frac{h}{\Delta x} \label{eq:up-almost}
 \end{equation}
@@ -236,7 +314,7 @@ Because of their tunable properties, QDs see many potential applications in tran
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
-To recap, we dedicated this entire chapter to developing and analyzing the particle in a box quantum model. This simplistic, yet powerful assumption allowed us to solve the \Sch\ equation exactly, which revealed a set of stationary states and associated quantized energy levels. We demonstrated that the stationary state wave functions were orthogonal to each other, which allowed us to write the general solution to the \Sch\ equation as a superposition of stationary state solutions. We saw the complementarity of position and momentum manifest in the uncertainty principle, and we ended the chapter with a discussion of quantum dots, which are well-approximated by the particle in a box model. As we move on to more complex scenarios, we will be relaxing some of the strict assumptions we made in this chapter and exploring different potential functions. First, we will see what happens when we have a \emph{finite} potential barrier, which causes a peculiar phenomenon known as quantum tunneling.
+To recap, we dedicated this entire chapter to developing and analyzing the particle in a box quantum model. This simplistic, yet powerful assumption allowed us to solve the \Sch\ equation exactly, which revealed a set of stationary states and associated quantized energy levels. We demonstrated that the stationary state wavefunctions were orthogonal to each other, which allowed us to write the general solution to the \Sch\ equation as a superposition of stationary state solutions. We saw the complementarity of position and momentum manifest in the uncertainty principle, and we ended the chapter with a discussion of quantum dots, which are well-approximated by the particle in a box model. As we move on to more complex scenarios, we will be relaxing some of the strict assumptions we made in this chapter and exploring different potential functions. First, we will see what happens when we have a \emph{finite} potential barrier, which causes a peculiar phenomenon known as quantum tunneling.
 
 
 %} % for doublespacing

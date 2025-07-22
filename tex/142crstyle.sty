@@ -31,17 +31,27 @@
 	urlcolor = RoyalBlue,
 }
 
+% Define colors
+\definecolor{Stanford}{RGB}{140, 21, 21}
+\definecolor{StanfordL}{RGB}{184, 58, 75}
+\definecolor{StanfordD}{RGB}{130, 0, 0}
+\definecolor{PaloAlto}{RGB}{23, 94, 84}
+
 % Define macros here
 \newcommand{\ad}{a^{\dagger}}
 \newcommand{\Sch}{Schr{\"o}dinger}
 \newcommand{\ddx}{\dfrac{\dd}{\dd{x}}}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand\note[1]{{\color{Stanford}#1}}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\chapterautorefname}{Chapter}
 
 \pagestyle{fancy}				% Sets fancy page style (fancyhdr)
 \cfoot{\thepage}				% Page numbers at center
 \graphicspath{{../fig/}}		% Directory for all figures
-\setlength{\parskip}{10pt}		% Inserts 10pt whitespace after paragraphs
-\setlength{\parindent}{0pt}		% No indentation for new paragraphs
+%\setlength{\parskip}{10pt}		% Inserts 10pt whitespace after paragraphs
+%\setlength{\parindent}{0pt}		% No indentation for new paragraphs
 \setlength{\footnotemargin}{3mm} % add space after footnote number
 \allowdisplaybreaks[1]
 

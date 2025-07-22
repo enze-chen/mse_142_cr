@@ -14,8 +14,9 @@ While they sound abstract, these concepts are important for...
 We'll just sketch the main ideas here, and encourage you to consult other resources for a more thorough treatment.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \section{Before you begin}
 
 This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
@@ -28,11 +29,13 @@ We include links to resources that may aid your review, as mastery of these conc
 \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \section{Fermions and bosons}
 
-To start off, imagine we have a wave function for a two-particle system, $\Psi(x_1, x_2)$.
+To start off, imagine we have a wavefunction for a two-particle system, $\Psi(x_1, x_2)$.
 If the two particles are indistinguishable, then their probability densities, given by $\abs{\Psi}^2$, should be \textbf{invariant under exchange}.
 That is, if the two particles swapped places, we wouldn't be able to tell the difference.
 Mathematically, we would write
@@ -41,7 +44,7 @@ Mathematically, we would write
 	\abs{\Psi(x_1, x_2)}^2 = \abs{\Psi(x_2, x_1)}^2  \label{eq:swapped}
 \end{equation}
 
-The consequence of Equation~\ref{eq:swapped} is that the two wave functions are only off by a multiplicative constant,
+The consequence of Equation~\ref{eq:swapped} is that the two wavefunctions are only off by a multiplicative constant,
 
 \begin{equation}
 	\Psi(x_1, x_2) = A \Psi(x_2, x_1)
@@ -50,7 +53,7 @@ The consequence of Equation~\ref{eq:swapped} is that the two wave functions are 
 
 where $A = e^{i \alpha}$ for some phase $\alpha$.
 Now consider further a situation of \emph{double exchange}, where the two particles return to their initial positions. 
-If this is true, then we should obtain the original wave function.
+If this is true, then we should obtain the original wavefunction.
 Now using Equation~\ref{eq:swapped_A}, we get
 \begin{align*}
 	\Psi(x_1, x_2) &= A \Psi(x_2, x_1) \\
@@ -79,7 +82,7 @@ Then we have
 	\Psi(x_1, x_1) = -\Psi(x_1, x_1) \implies \Psi(x_1, x_1) = 0   \label{eq:pauli}
 \end{equation}
 
-If the wave function is 0 everywhere, then the probability of this configuration is also 0.
+If the wavefunction is 0 everywhere, then the probability of this configuration is also 0.
 Equation~\ref{eq:pauli} leads to the celebrated Pauli exclusion principle.
 
 \begin{tcolorbox}[title = Pauli exclusion principle]
@@ -110,7 +113,9 @@ This means in 2D, double exchange is \emph{not} equivalent to no exchange and th
 This describes a class of particles called \textbf{anyons}, which are the basis for topological quantum computing.\footnote{See the article by V. Lahtinen and J. Pachos, \href{https://arxiv.org/abs/1705.04103}{\emph{SciPost Physics}} 3, 2017, for a lengthier introduction to this topic.}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \section{Topology}
 
@@ -128,7 +133,7 @@ If we give the buckle end (for easier visualization) a $2\pi$ (\SI{360}{\degree}
 This rotation by $2\pi$ is equivalent to a single exchange.
 
 However, if we rotate the buckle end again by $2\pi$ (we might need a long or soft belt!), so that the total rotation along the length of the belt is $4\pi$, we will find that it is possible to loop the belt once while keeping both ends flat (i.e., a continuous transformation) and return the belt to the original, \emph{untwisted} orientation!
-This $4\pi$ rotation is equivalent to double exchange, which we said for indistinguishable particles should result in the same wave function, and we see this reflected in the unchanged orientation of the belt.
+This $4\pi$ rotation is equivalent to double exchange, which we said for indistinguishable particles should result in the same wavefunction, and we see this reflected in the unchanged orientation of the belt.
 I encourage you to get a belt (or small object for the plate trick) and try it for yourself!\footnote{This is not just a \emph{Gedankenexperiment}! Take a look at \href{https://www.youtube.com/watch?v=EgsUDby0X1M}{this video} from Trefor Bazett or \href{https://www.gregegan.net/APPLETS/21/21.html}{this applet} for inspiration.}
 
 In the language of topology (advanced!): Rotation through $2\pi$ corresponds to a loop in the group SO(3), but this is not homotopic to the null curve.
@@ -236,7 +241,9 @@ In fact, this space is homeomorphic to a punctured disc, which in turn is just t
 Thus the fundamental group of the twice-punctured sphere is also $\mathbb{Z}$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \section{Back to fermions}
 
@@ -360,7 +367,9 @@ It explains why a rotation body can have a spin of half a quantum and no other f
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \section{Application: Topological insulators}
 
@@ -384,7 +393,9 @@ Topological superconductors: superconducting metal + semiconductor, producing Ma
 Topological semimetals: TaAs, CoSi, Dirac semimetals, Weyl semimetals, etc.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \section{Summary}
 To recap, in this chapter we analyzed...
