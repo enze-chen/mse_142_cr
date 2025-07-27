@@ -43,22 +43,22 @@ We include links to resources that may aid your review, as mastery of these conc
 	
 	\begin{itemize}
 		\item \note{Note 1}: The wavefunction is inherently multivariable; however, there's a slight difference between ``multivariable functions" and ``multivariable \emph{calculus}."
-		Regardless of how many variables there are, in 99\% of cases in this course, we will only be operating on one variable at a time.
+		Regardless of how many variables there are, we will only be operating on one variable each time.
 		All other variables will be treated as constants, so all you need to succeed is single-variable calculus.\footnote{This might be difficult to compartmentalize at the beginning, but I am confident you'll master with practice!}
 		
 		\item \note{Note 2}: Throughout this course, you will hear us talk about ``differential equations."
-		Perhaps hearing this makes you excited, or maybe it {\small(unfortunately)} conjures up painful memories; regardless, know that our treatment of diff-eq is \emph{markedly different} from your studies in CME 102 or MATH 53. 
-		There will not be numerical analysis, Euler's method, initial value problems, Laplace transforms, etc.
-		In fact, a better way to think about it is: We will be doing some regular calculus, just with variables on both sides of the equals sign.
+		Perhaps hearing this makes you excited, or maybe it {\tiny(unfortunately)} conjures up painful memories; regardless, know that our treatment of diff-eq is \emph{markedly different} from your studies in CME 102 or MATH 53. 
+		There will not be numerical analysis, initial value problems, Laplace transforms, etc.
+		A better way to think about it is: We are doing regular calculus, just with differentials and variables on both sides of the equation.
 	\end{itemize}
 	
-	\item Probability density: While not necessarily a prerequisite, understanding the fundamental properties of continuous probability distributions can aid interpretation of quantum mechanical wavefunctions later on.
+	\item Probability density: Understanding the fundamental properties of continuous probability distributions can aid interpretation of quantum mechanical wavefunctions later on.
 	For an example problem that highlights all the important properties, see \href{https://www.youtube.com/watch?v=QKA4HNEw3aY}{this YouTube video}.
 \end{itemize}
 
 \begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
-	We strongly recommend everyone to take \href{https://forms.gle/3HcR81RWdTTRJXzGA}{the autograded quiz} for this chapter.
-	It is anonymous and doesn't affect your grade, but it will give you some feedback and get you mentally situated for what's about to come.
+	We strongly recommend everyone to take \href{https://forms.gle/3HcR81RWdTTRJXzGA}{the autograded quiz} for this chapter \emph{before} you begin.
+	It is anonymous and doesn't affect your grade, but it will give you some feedback and situate you for what's about to come.
 \end{tcolorbox}
 
 
@@ -75,7 +75,7 @@ Recall that in 1924, Louis de Broglie derived the following relations:
 	\end{equation*}
 \end{tcolorbox}
 
-The following year, Austrian physicist Erwin \Sch\ decided to follow up on this idea and derive an equation that could model the wave-like behavior of particles.\footnote{A copy of the original paper can be found at E. \Sch, \href{https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.1049}{\emph{Phys. Rev.}} \textbf{28}, 1926.} 
+The following year, Austrian physicist Erwin \Sch\ decided to follow up on this idea and derive an equation that could model the wave-like behavior of particles.\footnote{A copy of the original paper can be found at E. \Sch, \href{https://journals.aps.org/pr/abstract/10.1103/PhysRev.28.1049}{\emph{Phys. Rev.}} 28, 1926.} 
 In classical mechanics, everyone knew that Newton's Second law ($F=ma$) could be solved to derive the position and velocity of any particle at any given time, provided a set of initial conditions. 
 In quantum mechanics, they wished to answer an analogous question: Is there a governing equation that can be solved to describe the time-evolution of a quantum mechanical state given a set of initial conditions? 
 
@@ -118,7 +118,7 @@ Specifically, note that
 	\pdv[2]{\Psi}{x} = -\frac{p^2}{\hbar^2}\Psi \label{eq:qwvdx}
 \end{equation}
 
-\noindent where $\pdv{t}$ represents taking the \textbf{partial derivative} of a quantity with respect to $t$ (reviewed in \autoref{sec:diff}). 
+\noindent where $\pdv{t}$ represents taking the \textbf{partial derivative} of a quantity with respect to $t$ (reviewed in \autoref{sec:calculus-diff}). 
 These two equations look pretty similar, so let's see if we can relate the two. 
 We can use some clever manipulations from classical mechanics to obtain 
 
@@ -152,9 +152,9 @@ For a particle that is moving through a non-zero potential $V(x,t)$, we modify o
 
 \autoref{eq:tdse} is the one-dimensional, time-dependent \Sch\ equation that describes the time-evolution of a quantum mechanical system's \textbf{wavefunction}, $\Psi$. 
 For the purposes of this course we will only consider one dimension in space (e.g. $x$ direction only). 
-The \Sch\ equation is a \textbf{partial differential equation} (PDE), which means it depends on the derivatives of a function with respect to multiple variables, i.e., the first partial derivative of $\Psi$ with respect to time and the second partial derivative of $\Psi$ with respect to position. 
-It is also a \textbf{linear} PDE, which means that every term involving $\Psi$ stands alone (not multiplied with other $\Psi$ terms).
-This equation was enthusiastically accepted by the physics community soon after it was proposed as it enabled new interpretations of quantum theory and had many other profound consequences.\footnote{For a Stanford professor's account of the origins of the \Sch\ equation, see F. Bloch, \href{http://physicstoday.scitation.org/doi/pdf/10.1063/1.3024633}{\emph{Phys. Today}} \textbf{29}, 1976.} 
+The \Sch\ equation is a \emph{partial differential equation} (PDE), which means it depends on the derivatives of a function with respect to multiple variables, i.e., the first partial derivative of $\Psi$ with respect to time and the second partial derivative of $\Psi$ with respect to position. 
+It is also a \emph{linear} PDE, which means that every term involving $\Psi$ stands alone (not multiplied with other $\Psi$ terms).
+This equation was enthusiastically accepted by the physics community soon after it was proposed as it enabled new interpretations of quantum theory and had many other profound consequences.\footnote{For a Stanford professor's account of the origins of the \Sch\ equation, see F. Bloch, \href{http://physicstoday.scitation.org/doi/pdf/10.1063/1.3024633}{\emph{Phys. Today}} 29, 1976.} 
 For example, if we can solve Equation~\ref{eq:tdse} with some initial condition $\Psi(x,0)$, then we can find $\Psi(x,t)$ for all future time.
 
 
@@ -191,18 +191,18 @@ The statistical interpretation is helpful for many reasons.
 For one, \autoref{eq:wfprob} helps us reconcile our observations of discrete particles with the continuous nature of the wavefunction by modeling the latter as a probability. 
 Taking the modulus squared of the wavefunction also results in a real quantity, since it is equivalent to multiplying the complex wavefunction by its complex conjugate.\footnote{Relevant: \href{https://xkcd.com/849/}{xkcd 849: Complex conjugate}.}
 
-\begin{tcolorbox}[title=Key point: modulus squared of a complex number] \vspace{-2ex}
+\begin{tcolorbox}[title=Modulus squared of a complex number] \vspace{-2ex}
 	\begin{equation}
 		\abs{\Psi}^2 = \Psi^*\Psi
 	\end{equation}
 \end{tcolorbox}
 
-Like any good quantum theory, this interpretation has some strange consequences, the most significant of which is the idea of \textbf{indeterminacy}.\footnote{For a dense read perfect for a Friday evening, check out B. d'Espagnat, \href{https://drive.google.com/file/d/1guIxArt4_G_G9hkvI5QCiWPoJC79YBmm/view?usp=sharing}{\emph{Scientific American}} \textbf{11}, 1979, 158-181.} 
+Like any good quantum theory, this interpretation has some strange consequences, the most significant of which is the idea of \textbf{indeterminacy}.\footnote{For a dense read perfect for a Friday evening, check out B. d'Espagnat, \href{https://drive.google.com/file/d/1guIxArt4_G_G9hkvI5QCiWPoJC79YBmm/view?usp=sharing}{\emph{Scientific American}} 11, 1979, 158-181.} 
 Notice that we cannot be certain about making measurements of position at the quantum scale, but we can only give a statistical figure as to the \emph{probability} of that result being measured. 
 This is particularly troublesome if a measurement has been made of a particle's position, and then you ask where the particle was \emph{right before} the measurement was made. 
 Was the particle at the same position where you had measured it? 
 If so, why does quantum mechanics still give the possibility, however slight, that it was in fact meters away? 
-And if it wasn't right there, where exactly was the particle?\footnote{``\href{http://physicstoday.scitation.org/doi/abs/10.1063/1.880968}{Is the moon there when nobody looks?}" N. Mermin, \emph{Phys. Today} \textbf{38}, 1985.}
+And if it wasn't right there, where exactly was the particle?\footnote{``\href{http://physicstoday.scitation.org/doi/abs/10.1063/1.880968}{Is the moon there when nobody looks?}" N. Mermin, \emph{Phys. Today} 38, 1985.}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -277,9 +277,9 @@ Now we will return to the original \Sch\ equation, which was given in \autoref{e
 This is a very complicated differential equation whose general solution is a function of two variables $x$ and $t$;
 it cannot be solved except in a handful of situations.\footnote{See Wikipedia's ``\href{https://en.wikipedia.org/wiki/List_of_quantum-mechanical_systems_with_analytical_solutions}{List of quantum-mechanical systems with analytical solutions}."}
 Therefore, we now consider a special case where the potential function is \emph{time-independent}, i.e., $V = V(x)$, such as that given by a stationary, external electric field. 
-This allows us to apply \textbf{separation of variables} and guess that the solution can be written as a product of two separate functions, each of which is a function of only one variable:\footnote{There's unfortunately no good rationale for why it would occur for us do this, other than ``it's been attempted many times and works well." See \href{https://math.stackexchange.com/questions/575205/why-separation-of-variables-works-in-pdes}{math.stackexchange} for a discussion.} 
+This allows us to apply \textbf{separation of variables} and guess that the solution can be written as a product of two separate functions,\footnote{There's unfortunately no good rationale for why it would occur for us do this, other than ``it's been attempted many times and works well." See \href{https://math.stackexchange.com/questions/575205/why-separation-of-variables-works-in-pdes}{math.stackexchange} for a discussion.}  each of which is a function of only one variable:
 
-\begin{tcolorbox}[title = Separation of variables] \vspace{-2ex}
+\begin{tcolorbox}[title = Separation of variables in the wavefunction] \vspace{-2ex}
 	\begin{equation}
 		\Psi(x,t) = \psi(x)\phi(t) \label{eq:sep}
 	\end{equation}
@@ -313,7 +313,7 @@ In any case, this gives us two equations, one for the left hand side,
 	-\frac{\hbar^2}{2m} \dv[2]{\psi}{x} + V(x)\psi = E\psi \label{eq:tise}
 \end{equation}
 
-\autoref{eq:phi} can be solved using fairly straightforward integration. 
+\autoref{eq:phi} can be solved using fairly standard integration. 
 Specifically, we obtain
 
 \begin{align*}
@@ -406,11 +406,11 @@ Overall, the solution we have found to \autoref{eq:sep} is
 \section[\Sch's Cat]{Application: \Sch's Cat}
 
 We end this chapter with an entertaining discussion about a famous consequence of the \Sch\ equation and the principle of superposition. 
-Shortly after \Sch\ published his namesake wave equation, Niels Bohr and Werner Heisenberg\footnote{The year 2025 celebrates the \href{https://quantum2025.org/}{100$^{\text{th}}$ anniversary of quantum mechanics}, dating to Heisenberg's formulation of matrix mechanics, which you can read about \href{https://www.aps.org/apsnews/2025/07/werner-heisenberg-pioneers-quantum-mechanics}{here} and \href{https://home.cern/news/news/physics/century-quantum-mechanics}{here}.} devised the \textbf{Copenhagen interpretation} of quantum mechanics,\footnote{A history of its development is provided by the \href{https://history.aip.org/exhibits/heisenberg/triumph.html}{American Institute of Physics}.} which states among many other things that \emph{prior} to making a \textbf{measurement}, a quantum system exists without definite properties, i.e. in a superposition state; 
+Shortly after \Sch\ published his namesake wave equation, Niels Bohr and Werner Heisenberg\footnote{The year 2025 celebrates the \href{https://quantum2025.org/}{100$^{\text{th}}$ anniversary of quantum mechanics}, dating to Heisenberg's formulation of matrix mechanics, which you can read about \href{https://www.aps.org/apsnews/2025/07/werner-heisenberg-pioneers-quantum-mechanics}{here} and \href{https://home.cern/news/news/physics/century-quantum-mechanics}{here}.} devised the \textbf{Copenhagen interpretation} of quantum mechanics,\footnote{A history of the development of the Copenhagen interpretation is provided by the \href{https://history.aip.org/exhibits/heisenberg/triumph.html}{American Institute of Physics}.} which states among many other things that \emph{prior} to making a \textbf{measurement}, a quantum system exists without definite properties, i.e. in a superposition state; 
 it is only in the \emph{process} of making a measurement that the superposition of wavefunctions is disturbed and \textbf{collapses} into one of the possible states. 
 
 While this novel interpretation was groundbreaking, many notable scientists did not agree, chief among them Einstein and \Sch. 
-For his entire life, Einstein had trouble reconciling the Copenhagen interpretation with everyday reality and asserted in a 1935 landmark publication that the wavefunction was incomplete.\footnote{See A. Einstein, B. Podolsky, N. Rosen. \href{https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777}{\emph{Phys. Rev.}} \textbf{47}, 1935, commonly referred to as the ``EPR paradox."} 
+For his entire life, Einstein had trouble reconciling the Copenhagen interpretation with everyday reality and asserted in a 1935 landmark publication that the wavefunction was incomplete.\footnote{See A. Einstein, B. Podolsky, N. Rosen. \href{https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777}{\emph{Phys. Rev.}} 47, 1935, commonly referred to as the ``EPR paradox."} 
 As is typically done in a field like quantum mechanics, Einstein formulated a hypothetical paradox in a \textbf{thought experiment} (\emph{Gedankenexperiment} in German) to show the shortcomings of the Copenhagen interpretation.
 
 \begin{figure}[!h]
@@ -433,7 +433,7 @@ If the Copenhagen interpretation was extended to the macroscopic world, then the
 But this is directly contrary to the classical description, which says that the cat can only be alive \emph{or} dead. 
 Is one set of laws ``more correct" than the other? 
 
-While this is an old thought experiment, it still fuels active areas of research.\footnote{See the provocatively titled article, ``\Sch's cat could be saved, say scientists" from \href{https://www.theguardian.com/science/2019/jun/03/feline-fine-fate-of-schrodingers-cat-can-be-reversed-study}{\emph{The Guardian}}, 2019.}
+While this is an old thought experiment, it still fuels active areas of research.\footnote{See the provocatively titled article, ``\Sch's cat could be saved, say scientists," from \href{https://www.theguardian.com/science/2019/jun/03/feline-fine-fate-of-schrodingers-cat-can-be-reversed-study}{\emph{The Guardian}}, 2019.}
 Ultimately, \Sch\ was interested in seeing when a quantum state transitions from a superposition of states into a unique classical state. 
 This actually has profound consequences on what it means to make an \textbf{observation/measurement} of a quantum mechanical system and how scientists are inherently limited in the accuracy of their measurements by the strange laws of quantum mechanics.
 
@@ -451,7 +451,7 @@ This actually has profound consequences on what it means to make an \textbf{obse
 \end{figure}
 
 To recap, we started this chapter searching for a mathematical expression that could describe the wave-like behavior of particles that we observed in the previous chapter. 
-We saw how Erwin \Sch's namesake wave equation did just that, and we used a time-independent potential function to simplify its overall formulation from a time-dependent, linear partial differential equation (\autoref{eq:tdse}) into a time-\emph{independent}, linear \emph{ordinary} differential equation (\autoref{eq:tise}). 
+We saw how Erwin \Sch's namesake wave equation did just that, and we used a time-independent potential function to simplify its general form (\autoref{eq:tdse}) into a time-\emph{independent}, linear ordinary differential equation (\autoref{eq:tise}). 
 However, our focus was less on the math and more on the analysis of the wavefunction $\Psi$, where we saw how the statistical interpretation, normalization condition, and superposition principle all helped us make sense of the solutions to the \Sch\ equation. 
 Even though scientists continue to debate the interpretation of the \Sch\ equation, there is no debate over its power, which we will utilize in the next chapter when we consider the particle in a box model. 
 I assure you---the fun has only just begun!
