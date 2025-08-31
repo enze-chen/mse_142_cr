@@ -27,11 +27,22 @@ This chapter builds on the following concepts, some of which we've already discu
 We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
 
 \begin{itemize}
-	\item foo
+	\item The time-independent \Sch\ equation, given in \autoref{eq:tise}.
+	Please refresh your understanding of all the terms in this equation before you begin.
+	
+	\item Properties of the sine and cosine functions, in particular:
+	\begin{itemize}
+		\item Their roots (where the functions equal 0).
+		
+		\item Their derivatives and integrals.
+		Here's \href{https://www.csusm.edu/lts/studentresources/handouts/calc_trig_derivatives_integrals.pdf}{a reference} from CSUSM.
+		
+		\item \emph{Challenge}: An identity that converts the product of sines into a sum of cosines.
+	\end{itemize}
 \end{itemize}
 
-\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
-	We strongly recommend everyone to take \href{TODO}{the autograded quiz} for this chapter \emph{before} you begin.
+\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Self-check quiz]
+	We strongly recommend everyone to take \href{https://forms.gle/PEXy8ttaf9p9hmN58}{the autograded quiz} for this chapter \emph{before} you begin.
 	It is anonymous and doesn't affect your grade, but it will give you some feedback and situate you for what's about to come.
 \end{tcolorbox}
 
@@ -43,7 +54,7 @@ We include links to resources that may aid your review, as mastery of these conc
 
 As its name would imply, the \textbf{particle in a box} model is just that: we have a small particle (e.g., an electron) that is free to move (in one dimension) in a small space confined between $x = 0$ and $x = L$ (\autoref{fig:box}). 
 In order to keep the particle confined, we imagine the potential $V$ to be $\infty$ outside of the walls and 0 on the inside. 
-For this reason, this model is also known as the \textbf{infinite potential well}.\footnote{FYI: what is the ``box."}
+For this reason, this model is also known as the \textbf{infinite potential well}.\footnote{When it comes to the ``box," the barrier is not necessarily a physical one like an everyday box; rather, it is an impenetrable ``wall" of very high energy due to electrostatic, nuclear, and other quantum effects.}
 Physically, you can think of this as a guitar string of length $L$ with the two ends fixed in place so that it cannot vibrate at the ends.
 
 \begin{figure}[!h]
@@ -121,16 +132,18 @@ Therefore, it must be the case that
 
 \begin{tcolorbox}[title=Allowed values of $k$] \vspace{-2ex}
 	\begin{equation}
-		k_n = \frac{n\pi}{L}, \quad n = 1, 2, 3, \dots   \label{eq:k-box}
+		k_n = \frac{n\pi}{L}, \quad n = 1, 2, 3, \dots   
+		\label{eq:k-box}
 	\end{equation}
 \end{tcolorbox}
 
 Now you see why we chose to index the solutions with the subscript $n$ all along. 
-Furthermore, because $k_n = \sqrt{2mE_n/\hbar^2}$, we can use some algebra and find that
+Furthermore, because $k_n = \sqrt{2mE_n/\hbar^2}$, we can use some algebra to rewrite \autoref{eq:k-box} as
 
 \begin{tcolorbox}[title = Allowed energies] \vspace{-2ex}
 	\begin{equation}
-		E_n = \frac{\hbar^2n^2\pi^2}{2mL^2} \label{eq:E-box}
+		E_n = \frac{\hbar^2n^2\pi^2}{2mL^2} 
+		\label{eq:E-box}
 	\end{equation}
 \end{tcolorbox}
 
@@ -205,7 +218,7 @@ We will show this as follows:
 	&= 0 \tag{when $m\neq n$, $\{m,n\} \in \mathbb{Z}$}
 \end{align*}
 
-\noindent where we used the identity $\sin(m)\sin(n) = \frac{1}{2}(\cos(m - n) - \cos(m + n))$ in the second line. 
+\noindent where we used the identity $\sin(m)\sin(n) = \frac{1}{2}(\cos(m - n) - \cos(m + n))$ in the second line.\footnote{This is not obvious and you are not responsible for memorizing extended trig identities.}
 That's pretty neat! 
 We do note, however, the special case when $m=n$. 
 In that case, by the normalization condition, the integrand is equivalent to the probability density function, which we know equals 1 when integrated over the range of $x$. 
@@ -237,7 +250,7 @@ From \autoref{eq:tdwf-box}, we obtain
 \end{equation*}
 
 \noindent where the exponential term has dropped out. 
-Now for the ``trick'': It would appear that this is still an infinite sum of sine terms, but we can make use of \autoref{eq:orthonorm} by multiplying both sides by an arbitrary function $\sin \left(\frac{j\pi x}{L}\right)$ and then integrating the result.\footnote{This is definitely \emph{not} obvious, and is a technique borrowed directly from Fourier series (see \href{http://tutorial.math.lamar.edu/Classes/DE/FourierSeries.aspx}{Paul Dawkins'} page if you're curious). You don't need to know this trick per se, but do understand why it works (i.e., \autoref{eq:orthonorm}).} 
+Now for the ``trick'': It would appear that this is still an infinite sum of sine terms, but we can make use of \autoref{eq:orthonorm} by multiplying both sides by an arbitrary function $\sin \left(\frac{j\pi x}{L}\right)$ and then integrating the result.\footnote{This is also not obvious, and is a technique borrowed directly from Fourier series (see \href{http://tutorial.math.lamar.edu/Classes/DE/FourierSeries.aspx}{Paul Dawkins'} page if you're curious). You don't need to know this trick per se, but do understand why it works (i.e., \autoref{eq:orthonorm}).} 
 This gives us:
 
 \begin{align*}
@@ -249,7 +262,7 @@ This gives us:
 \end{align*}
 
 The right hand side is 0 for all values of $n$ except when $n = j$. 
-Thus the summation is eliminated(!) and we can move $\frac{L}{2}$ to the other side (and change $j$ to $n$) to obtain
+Thus, the summation is eliminated(!) and we can move $\frac{L}{2}$ to the other side (and change $j$ to $n$) to obtain
 
 \begin{tcolorbox}[title = Wavefunction expansion coefficients] \vspace{-2ex}
 	\begin{equation}

@@ -18,7 +18,7 @@ Classical mechanics says that the ball will bounce back at you, or, should you t
 But what if the ball somehow \emph{goes through} the wall and emerges on the other side, leaving both unscathed? 
 This is the basis for \textbf{quantum tunneling}, a phenomenon where a particle passes through a potential barrier that it classically could not surmount. 
 As bizarre as this may seem, quantum mechanics says there is a non-zero probability for tunneling to occur, and this phenomenon is actually leveraged for a variety of physical applications. 
-Tunneling at the quantum scale occurs in physical systems ranging from photons\footnote{See D. D. Coon \href{http://aapt.scitation.org/doi/10.1119/1.1972893}{\emph{Am. J. Phys.}} 34, 1966.} to water\footnote{See \href{https://physics.aps.org/articles/v9/43}{this focus article} from \emph{Phys.} 9, 2016, about the work of A. I. Kolesnikov et al, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.167802}{\emph{Phys. Rev. Lett.}} 116, 2016.} and we will spend this chapter exploring the nature of this truly quantum mechanical behavior.
+Tunneling at the quantum scale occurs in physical systems ranging from photons\footnote{See D. D. Coon \href{http://aapt.scitation.org/doi/10.1119/1.1972893}{\emph{Am. J. Phys.}} 34, 1966.} to water\footnote{See \href{https://physics.aps.org/articles/v9/43}{this focus article} from \emph{Phys.} 9, 2016, about the work of A. I. Kolesnikov et al, \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.167802}{\emph{Phys. Rev. Lett.}} 116, 2016.}, and we will spend this chapter exploring the nature of this truly quantum mechanical behavior.
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
@@ -27,14 +27,23 @@ Tunneling at the quantum scale occurs in physical systems ranging from photons\f
 \section{Before you begin}
 
 This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
-We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
+Mastery of these concepts will allow you to get the most out of this chapter.
 
 \begin{itemize}
-	\item foo
+	\item Imaginary numbers, including:
+	\begin{itemize}
+		\item Complex exponentials and Euler's formula: $e^{ix} = \cos(x) + i \sin(x)$.
+		
+		\item Fractions with imaginary numbers, e.g., $\dfrac{1}{i} = \dfrac{i}{i^2} = -i$.
+		
+		\item Square roots of negative numbers, e.g., $\sqrt{-b} = \sqrt{-1 \cdot b} = i \sqrt{b}$.
+	\end{itemize}
+
+	\item Standard integration of general functions, e.g., $\displaystyle\int_{a}^{b} f'(x) \dd{x} = f(b) - f(a)$.
 \end{itemize}
 
-\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
-	We strongly recommend everyone to take \href{TODO}{the autograded quiz} for this chapter \emph{before} you begin.
+\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Self-check quiz]
+	We strongly recommend everyone to take \href{https://forms.gle/3ki9fxE6VEt61mjc6}{the autograded quiz} for this chapter \emph{before} you begin.
 	It is anonymous and doesn't affect your grade, but it will give you some feedback and situate you for what's about to come.
 \end{tcolorbox}
 
@@ -390,7 +399,7 @@ In order to detect small changes on a material's surface, the STM leverages \tex
 As $P_x$ and $P_y$ raster scan the tip across the surface, a control unit applies a small voltage ($\sim\SI{10}{\milli\volt}$) to cause electrons to tunnel between the tip and the surface. 
 It measures the tunneling current $J_T$ that's produced and adjusts the height of the third arm $P_z$ to maintain the same current. 
 The piezoelectric arms are so sensitive to changes in $J_T$ that the STM is capable of imaging the surface topography with a resolution of \SI{1}{\angstrom} (\SI{e-10}{\meter}) or less! 
-Not only are scientists able to image \emph{individual atoms} with this technique, but they have been able to manipulate the atoms as well, forming unique nanostructures like the quantum corral in \autoref{fig:corral} and even a stop-motion animated short film by the folks at IBM Research.\footnote{A video of ``A Boy and His Atom'' and more information can be found on the \href{http://www.research.ibm.com/articles/madewithatoms.shtml\#fbid=9xTkVKSpT3k}{IBM Research website}.}
+Not only are scientists able to image \emph{individual atoms} with this technique, but they have been able to manipulate the atoms as well, forming unique nanostructures like the quantum corral in \autoref{fig:corral} and even a stop-motion animated short film by the folks at IBM Research.\footnote{See  \href{https://www.youtube.com/watch?v=oSCX78-8-q0}{this YouTube video} from IBM.}
 
 \begin{figure}[!h]
 	\centering

@@ -22,14 +22,19 @@ We will see some pretty amazing behavior when we try to solve the \Sch\ equation
 \section{Before you begin}
 
 This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
-We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
+Mastery of these concepts will allow you to get the most out of this chapter.
 
 \begin{itemize}
-	\item foo
+	\item Simple harmonic oscillators.
+	We provide a short review in \autoref{sec:shm}.
+	
+	\item Complex numbers, especially multiplying complex conjugates.
+	
+	\item Single-variable integration, which you can review using \href{https://tutorial.math.lamar.edu/Classes/CalcII/IntTechIntro.aspx}{Paul's Online Math Notes}.
 \end{itemize}
 
-\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
-	We strongly recommend everyone to take \href{TODO}{the autograded quiz} for this chapter \emph{before} you begin.
+\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Self-check quiz]
+	We strongly recommend everyone to take \href{https://forms.gle/GYa2V1pGq7MBqhi99}{the autograded quiz} for this chapter \emph{before} you begin.
 	It is anonymous and doesn't affect your grade, but it will give you some feedback and situate you for what's about to come.
 \end{tcolorbox}
 
@@ -41,7 +46,7 @@ We include links to resources that may aid your review, as mastery of these conc
 \section{Parabolic potential}
 
 Consider a one-dimensional quadratic potential energy surface given by $V(x) = \frac{1}{2} kx^2$ which is typically associated with harmonic oscillators. 
-Like the simple harmonic oscillator (see \autoref{sec:shm} for a short review), the \textbf{quantum harmonic oscillator} (QHO) also has an effective spring constant $k$ and an associated angular frequency $\omega$ that is related by $\omega = \sqrt{k/m}$. 
+Like the simple harmonic oscillator, the \textbf{quantum harmonic oscillator} (QHO) also has an effective spring constant $k$ and an associated angular frequency $\omega$ that is related by $\omega = \sqrt{k/m}$. 
 The QHO is a powerful model for things like the forces that hold atoms together in materials and any potential energy surface near a local minimum (\autoref{fig:qpot}).
 
 \begin{figure}[!h]
@@ -69,7 +74,7 @@ If we represent the quadratic potential energy in terms of angular frequency, i.
 	\end{equation}
 \end{tcolorbox}
 
-Notice that in the first term, we used $\hat{p}$ to represent the momentum operator, which is defined as $\hat{p} = -i\hbar\dv{x}$.\footnote{Technically position here is also an operator $\hat{x}$, but it happens to be defined as $\hat{x} = x$, so we substitute.} 
+Notice that in the first term, we used $\hat{p}$ to represent the momentum operator, which is defined as $\hat{p} = -i\hbar\dv{x}$.\footnote{Technically position here is also an operator $\hat{x}$, but it \href{https://physics.stackexchange.com/questions/273272/derivation-of-position-operator-in-qm}{happens to be defined} as $\hat{x} = x$, so we leave off the hat.} 
 Now we need to solve the time-independent \Sch\ equation, given by:
 
 \begin{tcolorbox}[title = \Sch\ equation for the QHO] \vspace{-2ex}
@@ -111,7 +116,7 @@ Following this example, we first reformulate the Hamiltonian so that we can fact
 	&= \frac{m\omega^2}{2}\left[\hat{x} + \frac{i\hat{p}}{m\omega}\right] \left[\hat{x}-\frac{i\hat{p}}{m\omega}\right] \numberthis \label{eq:ham-factored}
 \end{align*}
 
-\emph{A word of caution}: Though it may seem logical, we actually hand-waved a lot of the rigor here, because dealing with operators (which are functions) is trickier than dealing with real quantities. 
+\emph{A word of caution}: Though it may seem logical, we actually hand-waved a lot of the rigor here, because dealing with operators (which are functions) is trickier than dealing with real quantities (i.e., scalars). 
 The theory is outside the scope of this course, but we will see shortly how this affects what are normally intuitive results. 
 
 Now, the factored Hamiltonian in \autoref{eq:ham-factored} is suggestive of some form of symmetry, particularly the expressions inside the square brackets. 
@@ -124,7 +129,7 @@ We are now going to define two new operators:
 	\end{align}
 \end{tcolorbox}
 
-The method we are using to solve the \Sch\ equation involves these two \textbf{ladder operators} $a$ and $\ad$ (read as: ``a-dagger"), which are known as the \textbf{annihilation}/\textbf{lowering} operator and \textbf{creation}/\textbf{raising} operator respectively (you will soon see why). 
+The method we are using to solve the \Sch\ equation in this chapter involves these two \textbf{ladder operators} $a$ and $\ad$ (read as: ``a-dagger"), which are known as the \textbf{annihilation}/\textbf{lowering} operator and \textbf{creation}/\textbf{raising} operator respectively (you will soon see why). 
 This clever method was developed by Paul Dirac\footnote{Dirac was extremely influential in developing the formalism of quantum theory, introducing this and bra-ket notation which you will see later. He shared the 1933 Nobel Prize in Physics with \Sch. Curiously, Einstein describes that ``[he has] trouble with Dirac. This balancing on the dizzying path between genius and madness is awful.'' (N. Sukumar, \emph{A Matter of Density}, 2012).} and allows us to eventually solve for the energy without directly solving the \Sch\ equation. 
 Note that we chose the coefficient of $\sqrt{m\omega/2\hbar}$ largely for the purpose of eliminating constants in the end.
 
@@ -174,7 +179,7 @@ Let's rewrite the Hamiltonian in terms of these new operators:
 \end{align*}
 
 Now, we might be tempted to combine the $\ad a$ term with the $a \ad$ term, but this is one of the tricky aspects of operators: 
-In general, \textbf{they do not commute} with each other, so we can't expect them to represent the same quantity when we switch the order. 
+\textbf{In general, they do not commute} with each other, so we can't expect them to represent the same quantity when we switch the order. 
 
 Of course, we shouldn't be fazed by this fact and we will try to see if we can find some relationship between the two terms. 
 Luckily, in quantum mechanics, there is a quantity called the \textbf{commutator} (adopted from group theory) that precisely indicates to what degree two operators fail to commute. 
@@ -184,7 +189,7 @@ Given two operators $A$ and $B$, we define the commutator as
 	[A,B] = AB - BA \label{eq:comm}
 \end{equation}
 
-\noindent which you can see for normal variables should be zero.
+\noindent which you can see for normal (scalar) variables should be zero.
 
 As a first example, let's consider the commutation relation between $\hat{x}$ and $\hat{p}$, i.e. $[\hat{x}, \hat{p}]$. 
 To aid the derivation, we will have both operators act on an arbitrary dummy function $\Psi$ that we will discard in the end.
@@ -223,7 +228,7 @@ We can apply this result to find that
 	[a, \ad] &= \frac{m\omega}{2\hbar}\left[\hat{x} + \frac{i\hat{p}}{m\omega}, \hat{x} - \frac{i\hat{p}}{m\omega} \right] \\
 	&= \frac{m\omega}{\hbar} \left[ \frac{i\hat{p}}{m\omega}, \hat{x} \right] \\
 	&= \frac{i}{\hbar}[\hat{p},\hat{x}] \\
-	&= \frac{i}{\hbar}(-i\hbar) 
+	&= \frac{i}{\hbar}(-i\hbar) = 1
 \end{align*}
 
 \begin{tcolorbox}[title = Ladder operators commutation relation] \vspace{-2ex}
@@ -483,7 +488,7 @@ To prove this, we will use the differential form of the operator $a$ and integra
 \begin{align*}
 	\braket{f}{ag} &= \int_{-\infty}^{\infty} f^* \left(x + \frac{\hbar}{m\omega} \dv{x} \right)g \dd{x} \\
 	&= \int_{-\infty}^{\infty} f^*xg \dd{x} + \frac{\hbar}{m\omega} \int_{-\infty}^{\infty} f^* \dv{g}{x} \dd{x} \\
-	&= \int_{-\infty}^{\infty} f^*xg \dd{x} + \frac{\hbar}{m\omega} \left[ \cancel{f^*g} \bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \dv{f^*}{x} g \dd{x} \right] \\
+	&= \int_{-\infty}^{\infty} f^*xg \dd{x} + \frac{\hbar}{m\omega} \left[ \cancel{f^*g} \bigg|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \dv{f^*}{x} g \dd{x} \right] \tag{\href{https://tutorial.math.lamar.edu/classes/calcII/IntegrationByParts.aspx}{IBP!}} \\
 	&= \int_{-\infty}^{\infty} \left[ \left(x - \frac{\hbar}{m\omega} \dv{x}\right) f \right]^* g \dd{x} \\
 	&= \int_{-\infty}^{\infty} \left(\ad f\right)^*g \dd{x} \\
 	&= \braket{\ad f}{g} 
@@ -607,8 +612,8 @@ When we work out the math, we arrive at the following expression for the station
 \noindent where $H_n$ are the \textbf{Hermite polynomials}, given explicitly and recursively by
 
 \begin{align*}
-	H_n(z) &= (-1)^n e^{z^2} \dv[n]{z} \left( e^{-z^2} \right) \\
-	H_n(z) &= 2zH_{n-1}(z) - 2(n-1)H_{n-2}(z)
+	H_n(z) &= (-1)^n e^{z^2} \dv[n]{z} \left( e^{-z^2} \right) \tag{explicit def.} \\
+	H_n(z) &= 2zH_{n-1}(z) - 2(n-1)H_{n-2}(z) \tag{recursive def.}
 \end{align*}
 
 More concretely, the first few Hermite polynomials are
@@ -636,7 +641,7 @@ There are two interesting properties of this probability density function.
 First, notice that there are nodes where the probability of finding the particle is zero, just like the particle in a box. 
 This is true of all energy states above the ground state. 
 Second, we notice that the profile looks very different from the ground state; namely, the regions of largest probability are at the sides instead of the middle. 
-This actually corresponds to a classical harmonic oscillator if you think about it---a moving mass on a spring with high elastic potential energy will spend the longest amount of time when it's most stretched out or most compressed (it moves the slowest as it changes direction), whereas it will move the fastest when it passes the equilibrium position. 
+This actually corresponds to a classical harmonic oscillator if you think about it---a moving mass on a spring with high elastic potential energy will spend the longest amount of time when it's most stretched out or most compressed (it moves the slowest as it changes direction), whereas it will move the fastest when it passes the equilibrium position (so the probability of finding it there is low, assuming it vibrates continuously without loss). 
 Thus we see a nice analogy where the high-energy quantum mechanical system begins to exhibit classical behavior.
 
 

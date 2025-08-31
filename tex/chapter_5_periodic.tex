@@ -23,14 +23,21 @@ We will see in this chapter how this changes our continuity condition and how qu
 \section{Before you begin}
 
 This chapter builds on the following concepts, some of which we've already discussed in class, others you will likely have encountered elsewhere.
-We include links to resources that may aid your review, as mastery of these concepts will allow you to get the most out of this chapter.
+Mastery of these concepts will allow you to get the most out of this chapter.
 
 \begin{itemize}
-	\item foo
+	\item Solving systems of equations.
+	In a previous chapter we used the substitution method to solve a system, but here there will be a key step that uses some fundamental linear algebra properties to solve a homogeneous system (of the form $A \mathbf{x} = \mathbf{0}$).
+	\begin{itemize}
+		\item For additional details and practice, see \href{https://textbooks.math.gatech.edu/ila/solution-sets.html}{Georgia Tech} and \href{https://www.cuemath.com/algebra/homogeneous-system-of-linear-equations/}{Cuemath}.
+	\end{itemize}
+
+	\item Trigonometry, perhaps more specifically the cosine function.
+	Know its roots, domain and range, and its relationship to the complex exponential function $e^{ix}$.
 \end{itemize}
 
-\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Pre-check quiz]
-	We strongly recommend everyone to take \href{TODO}{the autograded quiz} for this chapter \emph{before} you begin.
+\begin{tcolorbox}[colframe=PaloAlto, colbacktitle=PaloAlto!20!white, title=Self-check quiz]
+	We strongly recommend everyone to take \href{https://forms.gle/n5kDHJ5TQud5K9UZA}{the autograded quiz} for this chapter \emph{before} you begin.
 	It is anonymous and doesn't affect your grade, but it will give you some feedback and situate you for what's about to come.
 \end{tcolorbox}
 
@@ -73,13 +80,14 @@ In fact, we can go one step further and say that, given a potential strength of 
 	\end{equation}
 \end{tcolorbox}
 
-\noindent where $\delta(x)$ is the \textbf{Dirac delta function} given by
+\noindent where $\delta(y)$ is the \textbf{Dirac delta function} given by
 
 \begin{equation*}
-	\boxed{\delta(x) = \begin{cases}
-		+\infty & x=0 \\ 0 & x \neq 0
+	\boxed{\delta(y) = \begin{cases}
+		+\infty & y=0 \\ 
+		0 & y \neq 0
 	\end{cases} \quad \text{ and } \quad 
-	\int_{-\infty}^{\infty} \delta(x) \dd{x} = 1}
+	\int_{-\infty}^{\infty} \delta(y) \dd{y} = 1}
 \end{equation*}
 
 
@@ -228,8 +236,10 @@ We will do that here in the following manner:
 	\underset{Q}{\underbrace{\begin{bmatrix}
 		e^{-iqd}\sin(kd) & e^{-iqd}\cos(kd) - 1 \\ k\left(1 - e^{-iqd}\cos(kd)\right) & e^{-iqd}k\sin(kd) - \frac{2mg}{\hbar^2}
 	\end{bmatrix}}} \begin{bmatrix}
-	A \\ B
-	\end{bmatrix} &= 0 \numberthis \label{eq:kpmat}
+		A \\ B
+	\end{bmatrix} &= \begin{bmatrix}
+		0 \\ 0
+	\end{bmatrix}\numberthis \label{eq:kpmat}
 \end{align*}
 
 \noindent where we have a complicated coefficient matrix $Q$ multiplying our variables vector. 
@@ -250,6 +260,7 @@ Proceeding, we find
 	ke^{-iqd}\sin^2(kd) - \frac{2mg}{\hbar^2}\sin(kd) &= k\left[ \cos(kd) - e^{-iqd}\cos^2(kd) - e^{iqd} + \cos(kd) \right] \\
 	ke^{-iqd}\sin^2(kd) + ke^{-iqd}\cos^2(kd) - \frac{2mg}{\hbar^2}\sin(kd) &= 2k\cos(kd) - ke^{iqd} \\
 	ke^{-iqd} + ke^{iqd} - \frac{2mg}{\hbar^2}\sin(kd) &= 2k\cos(kd) \\
+	k \left(2 \cdot \frac{e^{-iqd} + e^{iqd}}{2} \right) &= 2k\cos(kd) + \frac{2mg}{\hbar^2}\sin(kd)\\
 	2k\cos(qd) &= 2k\cos(kd) + \frac{2mg}{\hbar^2}\sin(kd)
 \end{align*}
 
